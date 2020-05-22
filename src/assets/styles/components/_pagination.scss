@@ -1,0 +1,15 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__inner {
+    display: flex;
+    .page-item {
+      margin-right: 7px;
+      &:last-of-type {
+        margin-right: 0px;
+      }
+    }
+  }
+}
