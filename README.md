@@ -1,6 +1,6 @@
-# Wordpress Starter Theme with Underscores, Bootstrap 4 (with SASS), and Webpack 4
+# Wordpress Starter Theme with Underscores, and Webpack 4
 
-This is a Wordpress Starter Theme initially based on Underscores, packaged with Bootstrap 4 (with SASS), and built with Webpack 4.
+This is a Wordpress Starter Theme initially based on Underscores and built with Webpack 4.
 
 ### Prerequisites
 
@@ -28,7 +28,7 @@ Currently, only the revisioning and local dev server url are configured here.
 npm run dev
 ```
 
-Will compile scss and js with sourcemaps and copy from "src" to "dist." 
+Will compile scss and js with sourcemaps and copy from "src" to "dist."
 
 ```
 npm run start
@@ -46,9 +46,9 @@ By default revisioning/cachebusting is set to false. If you want it go to `src/b
 
 ## Built With
 
-* Underscores (https://underscores.me/) - Initial Kickstart
-* Bootstrap (https://getbootstrap.com/) - Front-end framework
-* Webpack (https://webpack.js.org/) - Asset bundling
+- Underscores (https://underscores.me/) - Initial Kickstart
+- Bootstrap (https://getbootstrap.com/) - Front-end framework
+- Webpack (https://webpack.js.org/) - Asset bundling
 
 ## Inspired By
 

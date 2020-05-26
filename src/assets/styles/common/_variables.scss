@@ -18,7 +18,7 @@ $sm-max: 64rem; // Set sm breakpoint's max width 64rem =1,024px
 $md-max: 90rem; // Set md breakpoint's max width 90rem = 1,440px
 $lg-max: 120rem; // Set lg breakpoint's max width 120rem = 1,920px
 
-$gutter: 1rem; // Set gutter size 16px
+$gutter: 2rem; // Set gutter size 16px
 
 $content-well-max-width: "none"; // Set the max-width of the content well => see mixins
 
@@ -44,6 +44,25 @@ $color__bg: var(--footer-color);
 $color__bright: #ffffff;
 $color__error: #ff5555;
 $color__grey: #eef2f4;
+$color__caption: #727272;
+
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+$colors: (primary, $color__main), (yellow, $color__link-hover),
+  (alert, $color__error), (bright, $color__bright);
+
+/* Color Options
+--------------------------------------------- */
+
+@each $name, $color in $colors {
+  .has-#{$name}-color {
+    color: $color;
+  }
+
+  .has-#{$name}-background-color {
+    background-color: $color;
+  }
+}
 
 /*==================================================================================
   BUTTONS

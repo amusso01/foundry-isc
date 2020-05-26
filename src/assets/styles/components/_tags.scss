@@ -1,0 +1,41 @@
+.tag {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  color: $color__bright;
+  background-color: $color__main;
+  padding: 0px 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: #1fb29a;
+    color: $color__bright;
+  }
+
+  &-light {
+    background-color: rgba(#09bfa1, 0.15);
+    color: $color__main;
+    &:hover {
+      color: $color__bright;
+    }
+  }
+  &-large {
+    font-size: 14px;
+    padding: 0px 10px;
+  }
+  &-grey {
+    background-color: $color__caption;
+    &:hover {
+      background-color: $color__caption;
+      cursor: default;
+    }
+  }
+  &-red {
+    background-color: $color__error;
+    &:hover {
+      background-color: $color__error;
+      cursor: default;
+    }
+  }
+}

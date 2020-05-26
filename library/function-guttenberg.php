@@ -10,14 +10,24 @@ function ea_setup() {
 	// Editor Color Palette
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Blue', 'ea-starter' ),
-			'slug'  => 'blue',
-			'color'	=> '#165F97',
+			'name'  => __( 'Primary', 'ea-starter' ),
+			'slug'  => 'primary',
+			'color'	=> '#09BFA1',
 		),
 		array(
-			'name'  => __( 'Orange', 'ea-starter' ),
-			'slug'  => 'orange',
-			'color' => '#F7931C',
+			'name'  => __( 'Yellow', 'ea-starter' ),
+			'slug'  => 'yellow',
+			'color' => '#FFBF00',
+		),
+		array(
+			'name'  => __( 'Alert', 'ea-starter' ),
+			'slug'  => 'alert',
+			'color' => '#FF5555',
+		),
+		array(
+			'name'  => __( 'Bright', 'ea-starter' ),
+			'slug'  => 'bright',
+			'color' => '#ffffff',
 		),
 	) );
 }

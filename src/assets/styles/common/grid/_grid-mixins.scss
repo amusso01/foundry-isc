@@ -10,7 +10,13 @@
   flex-wrap: wrap;
   // // Overrides flexbox's default behavior of making all children equal height
   // align-items: flex-start; // If this was not in place it would require two classes to make a row full of unequal height columns aligned top, middle, bottom
-  @if type-of($content-well-max-width) == number and $content-well-max-width != 0 and $full-width == "false"{
+  @if type-of($content-well-max-width) ==
+    number and
+    $content-well-max-width !=
+    0 and
+    $full-width ==
+    "false"
+  {
     max-width: $content-well-max-width;
   }
 }
@@ -42,8 +48,8 @@
       max-width: 100% / $grid-columns * $col-number;
       padding: $gutter;
     }
-  // If no col number is passed then arg is set to "auto" by default
-  // "auto" mode fills the horizontal space with evenly sized containers
+    // If no col number is passed then arg is set to "auto" by default
+    // "auto" mode fills the horizontal space with evenly sized containers
   } @else if $col-number == "auto" {
     box-sizing: border-box;
     flex-grow: 1;

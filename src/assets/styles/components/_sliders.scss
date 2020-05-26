@@ -1,0 +1,38 @@
+.slider {
+  display: inline-flex;
+  width: 41px;
+  height: 41px;
+  border: 1px solid $color__link-hover;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  > svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+  }
+  &:hover {
+    background-color: $color__link-hover;
+  }
+  &__right {
+    > svg {
+      transform: rotate(180deg);
+    }
+  }
+  &__big {
+    width: 68px;
+    height: 68px;
+    background-color: $color__link-hover;
+    > svg {
+      width: 30px;
+      height: 30px;
+      path {
+        fill: $color__bright;
+      }
+    }
+    &:hover {
+      background-color: #f2bb17;
+    }
+  }
+}
