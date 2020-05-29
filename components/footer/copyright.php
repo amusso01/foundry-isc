@@ -12,5 +12,5 @@
 ?>
 
 <div class="site-footer__copyright">
-    <p><?php echo  do_shortcode( "[copyright]" ) ?></p>
+    <p><?php echo  do_shortcode( "[copyright]" ) ?>com. All rights reserved. credits</p>
 </div><!-- .site-info -->

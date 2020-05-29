@@ -1,0 +1,98 @@
+.countdown {
+  height: 200px;
+  width: 100%;
+  background-color: $color__bg;
+  display: flex;
+  align-items: center;
+  padding: 20px 1rem;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0px;
+  z-index: 100;
+  transform: translateY(180px);
+  transition: 0.3s ease-in-out;
+  @media #{$breakpoint-sm-up} {
+    padding: 20px 4rem;
+    height: 150px;
+  }
+  &.countdown-up {
+    transform: translateY(0px);
+  }
+  &__info {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    @media #{$breakpoint-md-up} {
+      margin-bottom: 0px;
+    }
+
+    > p {
+      color: $color__bright;
+      font-weight: 300;
+      margin-right: 50px;
+      margin-bottom: 10px;
+      @media #{$breakpoint-sm-up} {
+        margin-bottom: 0px;
+      }
+    }
+    .gmt {
+      position: absolute;
+      bottom: -50px;
+      left: 0px;
+      color: $color__caption;
+      font-size: 13px;
+    }
+  }
+  .countdown__info-number {
+    width: 100%;
+    @media #{$breakpoint-sm-up} {
+      width: auto;
+    }
+  }
+  &__date {
+    display: inline-flex;
+    margin-right: 8px;
+    align-items: center;
+    @media #{$breakpoint-sm-up} {
+      margin-right: 50px;
+    }
+    &:last-of-type {
+      margin-right: 0px;
+    }
+    .countdown__label {
+      color: $color__caption;
+      margin-left: 5px;
+      font-size: 12px;
+      @media #{$breakpoint-sm-up} {
+        margin-left: 10px;
+        font-size: 16px;
+      }
+    }
+    .count {
+      font-size: 24px;
+      color: $color__main;
+      font-weight: 500;
+      @media #{$breakpoint-sm-up} {
+        font-size: 40px;
+      }
+    }
+  }
+  &__cta {
+    .btn {
+      min-width: 180px;
+      min-height: 55px;
+      font-size: 15px;
+    }
+  }
+  &__expired {
+    height: 110px;
+    .countdown__cta {
+      .btn {
+        cursor: no-drop;
+        background-color: $color__caption;
+      }
+    }
+  }
+}

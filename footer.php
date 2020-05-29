@@ -14,12 +14,12 @@
 </div><!-- #content -->
 
 	<footer class="site-footer">
-		<div class="site-footer__inner row content-block ">
-			<div class="col-md-4 site-footer__item site-footer__left ">
+		<div class="site-footer__inner row row-block ">
+			<div class="col-sm-4 site-footer__item site-footer__left ">
 
 			<?php 	if ( is_active_sidebar( 'footer-left' ) ) : ?>
 			
-				<div id="footer-widget-area" class="widget-area">
+				<div  class="widget-area">
 				<?php dynamic_sidebar( 'footer-left' ); ?>
 				</div>
 		
@@ -27,31 +27,41 @@
 			
 			</div>
 
-			<div class="col-md-4 site-footer__item site-footer__center ">
-
-				<?php get_template_part( 'components/navigation/footer-nav' ) ?>
+			<div class="col-xs-12 col-sm-4 site-footer__item site-footer__center ">
 		
 			<?php 	if ( is_active_sidebar( 'footer-center' ) ) : ?>
 				
-				<div id="footer-widget-area" class="widget-area">
+				<div  class="widget-area">
 				<?php dynamic_sidebar( 'footer-center' ); ?>
 				</div>
 			
 			<?php endif; ?>
 
-				<?php get_template_part( 'components/footer/copyright' ) ?>
-
 			</div>
 			
-			<div class="col-md-4 site-footer__item site-footer__right">
+			<div class="col-sm-4 col-xs-12 site-footer__item site-footer__right">
 				<?php 	if ( is_active_sidebar( 'footer-right' ) ) : ?>
 					
-					<div id="footer-widget-area" class="widget-area">
+					<div  class="widget-area">
 					<?php dynamic_sidebar( 'footer-right' ); ?>
 					</div>
 				
 				<?php endif; ?>
 			</div>
+		</div>
+		<div class="site-footer__legal content-block">
+			<div class="site-footer__legal-inner row ">
+				<div class="site-footer__legal-menu col-sm-6">
+				<?php get_template_part( 'components/navigation/footer-nav' ); ?>
+				</div>
+				<div class="site-footer__legal-membership row end-sm center-xs col-sm-6">
+					<div class="btn__wrapper"><a href="" class="btn">BECOME A MEMBER</a></div>
+					<div class="btn__wrapper"><a href="" class="btn btn__transparent">LOGIN</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="site-footer__copyright-wrapper content-block">
+			<?php get_template_part( 'components/footer/copyright' )  ?>		
 		</div>
 	</footer><!-- #colophon -->
 

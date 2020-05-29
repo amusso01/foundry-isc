@@ -42,12 +42,10 @@ $displaySocial = get_theme_mod('display-social');
 		<div class="site-header__inner content-block">
 			<?php get_template_part( 'components/header/logo' ); ?>
 			<?php get_template_part( 'components/navigation/primary' ); ?>
-			<?php if($displaySocial): ?>
-				<?php get_template_part( 'components/header/social' ); ?>
-			<?php endif ?>
+			<?php get_template_part( 'components/header/login-menu' ); ?>
+			<!-- <?php get_search_form(); ?>  -->
 			<?php get_template_part( 'components/header/hamburger' ); ?>
 		</div>
-		<!-- <?php get_search_form(); ?> -->
 	</header><!-- .site-header -->
 
 

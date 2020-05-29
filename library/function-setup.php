@@ -51,7 +51,11 @@ $GTM_id = '';
 function wpseed_register_theme_menus() {
   register_nav_menus([
     'mainmenu' => __('Main menu'),
-    'footermenu' => __('Footer menu')
+    'footercommunity' => __('Footer community'),
+    'footernav' => __('Footer navigation'),
+    'footerevents' => __('Footer events'),
+    'footerconsultancy' => __('Footer consultancy'),
+    'footermarketplace' => __('Footer marketplace')
   ]);
 }
 add_action( 'init', 'wpseed_register_theme_menus');

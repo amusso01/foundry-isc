@@ -1,6 +1,7 @@
 import smoothscroll from "smoothscroll-polyfill";
 import lozad from "lozad";
 import hamburger from "./../part/hamburger";
+import countdown from "./../part/countdown";
 
 export default {
   init() {
@@ -12,14 +13,13 @@ export default {
     // Hamburger event listener
     hamburger();
 
+    // Countdown
+    countdown();
+
     // Lazy load image with lozad.js https://github.com/ApoorvSaxena/lozad.js
     const lazyObserver = lozad(".lozad", {
       load: function(el) {
         el.src = el.dataset.src;
-        // On load add fade class (animation to be written)
-        // el.onload = function() {
-        // 	el.classList.add('fade')
-        // }
       }
     }); // lazy loads elements with default selector as '.lozad'
     lazyObserver.observe();

@@ -1,8 +1,13 @@
 .card {
-  max-width: 395px;
+  transition: 0.3s;
   > a {
     &:hover {
       color: $color__text;
+      .card__image {
+        > img {
+          transform: scale(1.2);
+        }
+      }
     }
   }
   &__body {
@@ -23,8 +28,22 @@
     }
   }
   &__image {
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
     img {
-      object-fit: cover;
+      max-width: 100%;
+      transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: block;
+      width: 100%;
+      height: auto;
+      transform: scale(1.04);
     }
   }
   &-dark {
@@ -56,9 +75,83 @@
       }
     }
   }
+}
+
+// PROFILE CARD
+.profile-card {
+  display: inline-flex;
+  cursor: pointer;
   &:hover {
-    .tag {
-      background-color: #1fb29a;
+    .slider {
+      background-color: rgba(#0b132b, 0.5);
+    }
+  }
+  &__image {
+    position: relative;
+    > img {
+      max-width: 210px;
+    }
+    .slider {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+    }
+  }
+  &__body {
+    background-color: $color__bright;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px 20px;
+  }
+}
+
+// SPEAKER CARD
+.speaker-card {
+  position: relative;
+  min-height: 320px;
+  background-size: cover;
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.3s;
+  min-width: 280px;
+  &:after {
+    @include pseudo;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#0b132b, 0.45);
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+  }
+  &:hover {
+    .speaker-card__logo {
+      transform: translate(-50%, 0px);
+    }
+  }
+  &__logo {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -100px);
+    background-color: $color__bright;
+    z-index: 1;
+    transition: 0.3s;
+    width: 180px;
+    height: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  > p {
+    color: $color__bright;
+    z-index: 1;
+    &:first-of-type {
+      font-weight: 600;
     }
   }
 }

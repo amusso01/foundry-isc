@@ -8,6 +8,11 @@ html {
   -webkit-font-smoothing: antialiased;
   font-size: $text__p;
   font-weight: 400;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /**
