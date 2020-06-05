@@ -1,4 +1,4 @@
-# Wordpress Starter Theme with Underscores, and Webpack 4
+# Wordpress FOUNDRY Starter Theme with Underscores, and Webpack 4
 
 This is a Wordpress Starter Theme initially based on Underscores and built with Webpack 4.
 
@@ -16,11 +16,9 @@ npm install
 
 ### Config (src/build/config-default.json)
 
-Includes a `config-default.json` file. You can make changes directly to this file. However, if you are working in a team environment you can also duplicate this file and name it `config-local.json`. The `config-local.json` file is ignored by git so that each environment can use a different configuration with the same git repo.
+Includes a `config-default.json` file. You can make changes directly to this file.
 
-During the build process a check is done to see if a `config-local.json` file exists. If `config-local.json` exists, the configuration will be loaded. If it does not exist, `config-default.json` will be used.
-
-Currently, only the revisioning and local dev server url are configured here.
+Currently, only the revisioning and local dev server url are configured here. Change the devUrl to your own local url.
 
 ### Building
 
@@ -34,7 +32,7 @@ Will compile scss and js with sourcemaps and copy from "src" to "dist."
 npm run start
 ```
 
-Will launch browsersync and watch changes in php, scss and js files. Note: `Be sure to change your local dev url in src/build/config-default.json`
+Will launch browsersync and watch changes in php, scss and js files. Note: `Be sure to change your local dev url in src/build/config-default.json and have a local server up and running`
 
 ```
 npm run build
@@ -47,9 +45,4 @@ By default revisioning/cachebusting is set to false. If you want it go to `src/b
 ## Built With
 
 - Underscores (https://underscores.me/) - Initial Kickstart
-- Bootstrap (https://getbootstrap.com/) - Front-end framework
 - Webpack (https://webpack.js.org/) - Asset bundling
-
-## Inspired By
-
-Inpspired by other starter themes out there such as Roots.io (http://roots.io/) and FoundationPress (https://foundationpress.olefredrik.com/). It may be inspired by other open source projects down the road. In the spirit of open source, if you find this project useful, do with it what you will.
