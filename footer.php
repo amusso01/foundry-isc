@@ -13,6 +13,8 @@
 
 </div><!-- #content -->
 
+	<?php is_page('contact') ? get_template_part( 'components/footer/social' ) : '' ;?>
+	
 	<footer class="site-footer">
 		<div class="site-footer__inner row row-block ">
 			<div class="col-sm-4 site-footer__item site-footer__left ">

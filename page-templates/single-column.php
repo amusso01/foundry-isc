@@ -11,7 +11,9 @@
 get_header();
 ?>
 
-<main role="main" class="site-main single-main content-block">
+<?php get_template_part( 'components/page/hero-simple' ) ?>
+
+<main role="main" class="site-main single-column-main content-block">
 <?php 
 if ( have_posts() ) :
 	while ( have_posts() ) :

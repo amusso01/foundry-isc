@@ -66,7 +66,7 @@ a {
   font-size: $text__p;
   line-height: 30px;
   &:hover {
-    color: $color__link-hover;
+    text-decoration: underline;
   }
 }
 code {
@@ -132,7 +132,12 @@ h5,
 
 h6,
 .h6 {
-  font-size: $text__h6;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color__main;
+  letter-spacing: 0.6px;
+  line-height: 30px;
 }
 
 // Show footer always at the end of page

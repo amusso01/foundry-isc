@@ -1,0 +1,7 @@
+.single-column-main {
+  margin-top: 45px;
+  @media #{$breakpoint-sm-up} {
+    width: 70%;
+    margin: 73px auto;
+  }
+}
