@@ -1,6 +1,7 @@
 .contact-cards {
   padding-top: 66px;
   background-color: $color__grey;
+  margin-bottom: 100px;
 }
 .contact-card__inner {
   max-width: 500px;
@@ -53,11 +54,48 @@
 
 // contact form
 .contactForm {
-  &__half {
-    display: flex;
-    label {
-      display: flex;
-      flex-direction: column;
+  width: 70%;
+  margin: 50px auto;
+  text-align: left;
+  &__row {
+    .wpcf7-form-control {
+      width: 99%;
+      height: 55px;
+      margin-top: 5px;
+      border: none;
+      background-color: $color__grey;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      &:active,
+      &:focus {
+        border: 1px solid $color__main;
+      }
     }
+    .wpcf7-textarea {
+      height: 120px;
+      padding: 20px;
+    }
+    label {
+      width: 100%;
+    }
+    &-half {
+      display: flex;
+      // @include media-breakpoint-down(xs){
+      //     flex-direction: column;
+      // }
+      .wpcf7-form-control {
+        width: 98%;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        &:last-of-type {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+  .wpcf7-submit {
+    border: none;
   }
 }

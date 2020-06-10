@@ -309,5 +309,25 @@ if($secondsLeft >= 0){
 </div>
 
 
+<!-- ADS Portrait -->
+<?php 	
+		if ( is_active_sidebar( 'ads-portrait' ) ) : ?>
+			
+			<div  class="widget-area ">
+			<?php dynamic_sidebar( 'ads-portrait' ); ?>
+			</div>
+	
+		<?php endif; ?>
+
+<!-- ADS Landscape -->
+<?php 	
+		if ( is_active_sidebar( 'ads-landscape' ) ) : ?>
+			
+			<div  class="widget-area ">
+			<?php dynamic_sidebar( 'ads-landscape' ); ?>
+			</div>
+	
+		<?php endif; ?>
+
 <?php
 get_footer();

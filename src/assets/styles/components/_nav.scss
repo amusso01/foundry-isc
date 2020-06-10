@@ -94,6 +94,7 @@
           bottom: 0px;
         }
         &:hover {
+          text-decoration: none;
           &::after {
             @media #{$breakpoint-md-up} {
               height: 5px;
