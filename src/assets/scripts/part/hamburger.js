@@ -1,5 +1,3 @@
-import { gsap } from "gsap";
-
 export default function hamburger() {
   const burger = document.getElementById("hamburger");
   const mainMenu = document.querySelector(".site-header__menu");

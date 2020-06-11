@@ -17,13 +17,14 @@
   &__logo {
     max-width: 190px;
     position: relative;
-    z-index: 10;
+    z-index: 10001;
     svg {
       vertical-align: bottom;
     }
   }
   &__hamburger {
     display: block;
+    z-index: 10001;
     @media #{$breakpoint-md-up} {
       display: none;
     }
@@ -35,6 +36,7 @@
     transform: translateY(-1200px);
     background-color: $color__bright;
     transition: 0.4s ease-in-out;
+    z-index: 10000;
     @media #{$breakpoint-md-up} {
       margin-right: auto;
       margin-left: 40px;
@@ -66,6 +68,7 @@
       align-items: center;
       padding-left: 2rem;
       border-top: 1px solid #eef2f4;
+
       @media #{$breakpoint-md-up} {
         margin-left: 30px;
         padding-left: 0px;
@@ -119,6 +122,7 @@
     margin-right: 30px;
     position: absolute;
     bottom: 20px;
+    z-index: 10001;
     @media #{$breakpoint-sm-up} {
       position: inherit;
     }

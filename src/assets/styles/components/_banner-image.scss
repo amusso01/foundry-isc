@@ -1,0 +1,45 @@
+.hero-leader {
+  display: grid;
+  grid-template-columns: 1fr;
+  @media #{$breakpoint-md-up} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__content {
+    padding: 50px 27px;
+    color: $color__bright;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: $color__bg;
+    @media #{$breakpoint-sm-up} {
+      padding: 100px 67px;
+    }
+    p:not(.header-display) {
+      color: $color__bright;
+      width: 100%;
+      > span {
+        font-weight: 700;
+      }
+      margin-bottom: 25px;
+      @media #{$breakpoint-md-up} {
+        width: 76%;
+      }
+    }
+    .header-display {
+      margin-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    > svg {
+      position: absolute;
+      bottom: -40px;
+    }
+  }
+  &__image {
+    display: none;
+    @media #{$breakpoint-md-up} {
+      display: block;
+    }
+  }
+}

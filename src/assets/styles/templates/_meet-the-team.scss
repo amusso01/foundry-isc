@@ -1,0 +1,62 @@
+.meet-the-team-main {
+  background-color: $color__grey;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+.leadership {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 25px;
+  row-gap: 18px;
+  padding-top: 65px;
+  @media #{$breakpoint-sm-up} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &-title {
+    grid-column: 1 / -1;
+  }
+  &-card {
+    background-color: $color__bright;
+    @media #{$breakpoint-sm-up} {
+      justify-self: stretch;
+    }
+  }
+  .leadership-card {
+    &__body {
+      padding: 15px;
+      .tag {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.team-members {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 25px;
+  row-gap: 18px;
+  margin-top: 80px;
+  @media #{$breakpoint-sm-up} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &-title {
+    grid-column: 1 / -1;
+  }
+  .member {
+    background-color: $color__bright;
+    display: flex;
+    @media #{$breakpoint-sm-up} {
+      justify-self: stretch;
+    }
+    &-image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 120px;
+      width: 200px;
+    }
+    &-body {
+      padding: 35px 20px;
+    }
+  }
+}
