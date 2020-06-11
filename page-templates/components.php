@@ -310,7 +310,7 @@ if($secondsLeft >= 0){
 
 
 <!-- ADS Portrait -->
-<?php 	
+		<?php 	
 		if ( is_active_sidebar( 'ads-portrait' ) ) : ?>
 			
 			<div  class="widget-area ">

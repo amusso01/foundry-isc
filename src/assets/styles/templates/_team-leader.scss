@@ -1,0 +1,41 @@
+.teamleader-main {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+
+.leaderNext {
+  display: flex;
+  max-height: 197px;
+  margin-top: 50px;
+  &__image {
+    position: relative;
+    .slider {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    > img {
+      height: 100%;
+    }
+  }
+  &:hover {
+    .slider {
+      opacity: 1;
+    }
+  }
+  &__info {
+    flex-basis: 100%;
+    margin-left: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > p {
+      font-size: 12px;
+    }
+    > h2 {
+      margin-bottom: 2px;
+    }
+  }
+}

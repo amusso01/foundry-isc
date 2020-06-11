@@ -16,6 +16,28 @@
     pointer-events: none;
     svg {
       opacity: 0;
+      &:hover {
+        path {
+          fill: $color__main;
+        }
+      }
+    }
+  }
+  &__main-icon {
+    > svg {
+      path {
+        fill: $color__caption;
+      }
+      &:hover {
+        path {
+          fill: $color__main;
+        }
+      }
+      &.open {
+        path {
+          fill: $color__main;
+        }
+      }
     }
   }
 }

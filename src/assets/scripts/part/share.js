@@ -19,6 +19,7 @@ export default function share() {
   });
 
   shareIcon.addEventListener("click", () => {
+    shareIcon.classList.toggle("open");
     toggleTween(tl);
   });
 
