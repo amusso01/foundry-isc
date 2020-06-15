@@ -5,7 +5,7 @@
 * @package Foundry
 *
 *Template Name: Single column centered
-*Template Post Type: page
+*Template Post Type: page, post, videos
  */
 
 get_header();

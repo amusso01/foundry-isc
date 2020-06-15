@@ -2,6 +2,7 @@ import smoothscroll from "smoothscroll-polyfill";
 import lozad from "lozad";
 import hamburger from "./../part/hamburger";
 import countdown from "./../part/countdown";
+import carousel from "./../part/carousel";
 
 export default {
   init() {
@@ -23,6 +24,12 @@ export default {
       }
     }); // lazy loads elements with default selector as '.lozad'
     lazyObserver.observe();
+
+    // Swiper
+    const slider = document.getElementById("slider");
+    if (typeof slider != "undefined" && slider != null) {
+      carousel();
+    }
   },
 
   finalize() {

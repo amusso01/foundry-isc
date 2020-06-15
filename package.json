@@ -19,7 +19,8 @@
     "gsap": "file:gsap-bonus.tgz",
     "hamburgers": "^1.1.3",
     "lozad": "^1.14.0",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smoothscroll-polyfill": "^0.4.4",
+    "swiper": "^5.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

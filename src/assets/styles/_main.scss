@@ -1,3 +1,6 @@
+// SWIPER import
+@import "~swiper/swiper";
+
 //Custom styles start here
 
 // Common
@@ -26,10 +29,15 @@
 @import "components/share";
 @import "components/social";
 @import "components/banner-image";
+@import "components/banner-image-title";
+@import "components/videos";
+@import "components/carousel";
 
 // Templates
 @import "templates/single-column";
 @import "templates/home";
 @import "templates/contact";
 @import "templates/meet-the-team";
+@import "templates/meet-the-members";
 @import "templates/team-leader";
+@import "templates/testimonials";

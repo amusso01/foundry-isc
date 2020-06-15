@@ -1,0 +1,29 @@
+.hero-image-title {
+  background-color: $color__bg;
+  position: relative;
+  display: grid;
+  @media #{$breakpoint-sm-up} {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bg-image {
+    min-height: 285px;
+    max-height: 285px;
+    background-size: cover;
+    display: none;
+    @media #{$breakpoint-sm-up} {
+      display: block;
+    }
+  }
+  .title {
+    color: $color__bright;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    p {
+      color: $color__bright;
+      margin-top: 10px;
+    }
+  }
+}
