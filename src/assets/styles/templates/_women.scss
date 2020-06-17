@@ -1,0 +1,21 @@
+.women-main {
+  background-color: $color__grey;
+  padding-top: 120px;
+  padding-bottom: 150px;
+}
+.women__cards {
+  .profile-card {
+    display: flex;
+    &__body {
+      display: flex;
+      justify-content: stretch;
+      align-items: stretch;
+      width: 100%;
+    }
+    &.no-hover {
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+}

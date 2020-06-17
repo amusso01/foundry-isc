@@ -3,6 +3,7 @@ import lozad from "lozad";
 import hamburger from "./../part/hamburger";
 import countdown from "./../part/countdown";
 import carousel from "./../part/carousel";
+import sharing from "./../part/share";
 
 export default {
   init() {
@@ -29,6 +30,12 @@ export default {
     const slider = document.getElementById("slider");
     if (typeof slider != "undefined" && slider != null) {
       carousel();
+    }
+
+    // Share
+    const share = document.getElementById("share");
+    if (typeof share != "undefined" && share != null) {
+      sharing();
     }
   },
 

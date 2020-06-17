@@ -2,7 +2,6 @@
   padding-top: 120px;
   padding-bottom: 90px;
 }
-
 .leaderNext {
   display: flex;
   max-height: 197px;
@@ -15,9 +14,6 @@
       right: 0px;
       opacity: 0;
       transition: 0.3s;
-    }
-    > img {
-      height: 100%;
     }
   }
   &:hover {

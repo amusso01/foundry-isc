@@ -4,8 +4,8 @@
 *
 * @package Foundry
 *
-*Template Name: Team leader
-*Template Post Type: leadership_team
+*Template Name: Team leader / Women in sport
+*Template Post Type: leadership_team, women_sport
  */
 
 get_header();
@@ -17,11 +17,14 @@ $previous_post = get_previous_post();
 $next_post = get_next_post();
 $right_post = $next_post == false ? $previous_post: $next_post;
 
+
 $post_id = $right_post->ID;
 $title = $right_post->post_title;
 $role = get_field('member_role', $post_id);
 $image =get_field('image', $post_id);
 $url = get_the_permalink( $post_id );
+$own = get_field('has_its_own_page', $post_id);
+
 ?>
 
 <?php get_template_part( 'components/page/hero-leader' ) ?>
@@ -56,7 +59,8 @@ $url = get_the_permalink( $post_id );
 		
 		<?php endif; ?>
 		</div>
-		<div class="col-xs-11 col-xs-offset-1 col-sm-4 col-md-4">
+		<?php if($own) : ?>
+		<div class="col-xs-11 col-xs-offset-1 col-sm-6 col-md-4">
 			<a href="<?php echo $url ?>">
 				<div class="leaderNext">
 					<div class="leaderNext__image">
@@ -73,6 +77,7 @@ $url = get_the_permalink( $post_id );
 				</div>
 			</a>
 		</div>
+		<?php endif; ?>
 	</div>
 
 

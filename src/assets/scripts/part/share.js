@@ -3,7 +3,7 @@ import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
 gsap.registerPlugin(CSSRulePlugin);
 
-export default function share() {
+export default function sharing() {
   const shareIcon = document.querySelector(".social-share__main-icon > svg ");
   const iconsContainer = document.querySelector(".social-share__icons");
   const icons = iconsContainer.querySelectorAll("svg");

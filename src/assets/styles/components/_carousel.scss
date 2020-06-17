@@ -5,9 +5,6 @@
     flex-grow: 1;
     align-self: center;
     min-width: 40%;
-    @media #{$breakpoint-md-up} {
-      align-self: flex-end;
-    }
     > img {
       margin: auto;
       border-radius: 50%;

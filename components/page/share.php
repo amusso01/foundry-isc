@@ -10,7 +10,7 @@
 
 ?>
 
-<section class="social-share">
+<section class="social-share" id="share">
     <div class="social-share__main-icon">
         <?php get_template_part( 'svg-template/svg', 'share' ) ?>
     </div>

@@ -1,0 +1,101 @@
+.consultancy-main {
+  margin-top: 80px;
+  @media #{$breakpoint-sm-up} {
+    margin-top: 120px;
+  }
+}
+.strategic-pillars {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  .pillar {
+    margin-bottom: 40px;
+    &__header {
+      margin-bottom: 15px;
+      > h4 {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+      }
+    }
+    &__line-green {
+      width: 80%;
+      height: 1px;
+      background-color: $color__main;
+      margin-top: 15px;
+    }
+  }
+}
+
+.consultancy-numbers {
+  background-color: $color__bg;
+  color: $color__bright;
+  padding: 80px;
+  p {
+    color: $color__bright;
+    line-height: 28px;
+  }
+  .numbers__text {
+    h2 {
+      margin-bottom: 15px;
+    }
+    .number__line-green {
+      width: 80%;
+      height: 1px;
+      background-color: $color__main;
+      margin-bottom: 55px;
+    }
+    strong {
+      font-size: 21px;
+      line-height: 28px;
+    }
+    .numbers__body {
+      width: 80%;
+      p {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .numbers__rolling {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+    .numbers__big {
+      color: $color__main;
+      font-size: 45px;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+    .numbers__relative {
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+}
+
+.consultancy__clients {
+  padding: 70px 0px 90px;
+  h2 {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  .client__logo {
+    margin-bottom: 60px;
+    > img {
+      margin: auto;
+    }
+  }
+}
+
+.consultancy-video-section {
+  padding-top: 80px;
+  background-color: $color__bg;
+  padding-bottom: 90px;
+  color: $color__bright;
+  .video-loop {
+    margin-bottom: 60px;
+  }
+  .swiper-container {
+    padding-bottom: 100px;
+  }
+}
