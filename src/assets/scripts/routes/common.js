@@ -1,6 +1,7 @@
 import smoothscroll from "smoothscroll-polyfill";
 import lozad from "lozad";
 import hamburger from "./../part/hamburger";
+import navDropdown from "./../part/navDropdown";
 import countdown from "./../part/countdown";
 import carousel from "./../part/carousel";
 import sharing from "./../part/share";
@@ -14,6 +15,9 @@ export default {
 
     // Hamburger event listener
     hamburger();
+
+    // Dropdown menu
+    navDropdown();
 
     // Countdown
     countdown();

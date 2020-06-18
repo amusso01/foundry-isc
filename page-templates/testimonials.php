@@ -16,7 +16,7 @@ get_header();
 
 <main role="main" class="site-main testimonials-main">
 
-<div class="row row-block testimonials-video-section">
+<div id="testimonials"  class="row row-block testimonials-video-section">
 
     <div class="col-xs-12">
         <h2>Videos</h2>
@@ -26,7 +26,7 @@ get_header();
  
 </div>
 
-<div class="content-block">
+<div  class="content-block">
 	<?php get_template_part( 'components/carousel/testimonial-carousel' ) ?>
 </div>
 

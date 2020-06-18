@@ -28,6 +28,7 @@
 	2.5 Add Page Slug to Body
 	2.6 Login page customization
 	2.7 Custom pagination
+	2.7 Custom post type
 ==================================================================================*/
 
 
@@ -360,3 +361,207 @@ function foundry_pagination( \WP_Query $wp_query = null, $echo = true ) {
 	}
 	return null;
 }
+
+/* 2.7 CUSTOM PAGINATION
+/–––––––––––––––––––––––––––––––––*/
+
+function cptui_register_my_cpts() {
+
+	/**
+	 * Post Type: Leadership Team.
+	 */
+
+	$labels = [
+		"name" => __( "Leadership Team", "custom-post-type-ui" ),
+		"singular_name" => __( "Leadership Teams", "custom-post-type-ui" ),
+		"menu_name" => __( "Leadership Team", "custom-post-type-ui" ),
+		"all_items" => __( "All Leadership Team", "custom-post-type-ui" ),
+		"add_new" => __( "Add new", "custom-post-type-ui" ),
+		"add_new_item" => __( "Add new Leadership Teams", "custom-post-type-ui" ),
+		"edit_item" => __( "Edit Leadership Teams", "custom-post-type-ui" ),
+		"new_item" => __( "New Leadership Teams", "custom-post-type-ui" ),
+		"view_item" => __( "View Leadership Teams", "custom-post-type-ui" ),
+		"view_items" => __( "View Leadership Team", "custom-post-type-ui" ),
+		"search_items" => __( "Search Leadership Team", "custom-post-type-ui" ),
+		"not_found" => __( "No Leadership Team found", "custom-post-type-ui" ),
+		"not_found_in_trash" => __( "No Leadership Team found in trash", "custom-post-type-ui" ),
+		"parent" => __( "Parent Leadership Teams:", "custom-post-type-ui" ),
+		"featured_image" => __( "Featured image for this Leadership Teams", "custom-post-type-ui" ),
+		"set_featured_image" => __( "Set featured image for this Leadership Teams", "custom-post-type-ui" ),
+		"remove_featured_image" => __( "Remove featured image for this Leadership Teams", "custom-post-type-ui" ),
+		"use_featured_image" => __( "Use as featured image for this Leadership Teams", "custom-post-type-ui" ),
+		"archives" => __( "Leadership Teams archives", "custom-post-type-ui" ),
+		"insert_into_item" => __( "Insert into Leadership Teams", "custom-post-type-ui" ),
+		"uploaded_to_this_item" => __( "Upload to this Leadership Teams", "custom-post-type-ui" ),
+		"filter_items_list" => __( "Filter Leadership Team list", "custom-post-type-ui" ),
+		"items_list_navigation" => __( "Leadership Team list navigation", "custom-post-type-ui" ),
+		"items_list" => __( "Leadership Team list", "custom-post-type-ui" ),
+		"attributes" => __( "Leadership Team attributes", "custom-post-type-ui" ),
+		"name_admin_bar" => __( "Leadership Teams", "custom-post-type-ui" ),
+		"item_published" => __( "Leadership Teams published", "custom-post-type-ui" ),
+		"item_published_privately" => __( "Leadership Teams published privately.", "custom-post-type-ui" ),
+		"item_reverted_to_draft" => __( "Leadership Teams reverted to draft.", "custom-post-type-ui" ),
+		"item_scheduled" => __( "Leadership Teams scheduled", "custom-post-type-ui" ),
+		"item_updated" => __( "Leadership Teams updated.", "custom-post-type-ui" ),
+		"parent_item_colon" => __( "Parent Leadership Teams:", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Leadership Team", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "leadership_team", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-businesswoman",
+		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
+	];
+
+	register_post_type( "leadership_team", $args );
+
+	/**
+	 * Post Type: Videos.
+	 */
+
+	$labels = [
+		"name" => __( "Videos", "custom-post-type-ui" ),
+		"singular_name" => __( "Video", "custom-post-type-ui" ),
+		"menu_name" => __( "Videos for FAQ", "custom-post-type-ui" ),
+		"all_items" => __( "All Videos", "custom-post-type-ui" ),
+		"add_new" => __( "Add new", "custom-post-type-ui" ),
+		"add_new_item" => __( "Add new Video", "custom-post-type-ui" ),
+		"edit_item" => __( "Edit Video", "custom-post-type-ui" ),
+		"new_item" => __( "New Video", "custom-post-type-ui" ),
+		"view_item" => __( "View Video", "custom-post-type-ui" ),
+		"view_items" => __( "View Videos", "custom-post-type-ui" ),
+		"search_items" => __( "Search Videos", "custom-post-type-ui" ),
+		"not_found" => __( "No Videos found", "custom-post-type-ui" ),
+		"not_found_in_trash" => __( "No Videos found in bin", "custom-post-type-ui" ),
+		"parent" => __( "Parent Video:", "custom-post-type-ui" ),
+		"featured_image" => __( "Featured image for this Video", "custom-post-type-ui" ),
+		"set_featured_image" => __( "Set featured image for this Video", "custom-post-type-ui" ),
+		"remove_featured_image" => __( "Remove featured image for this Video", "custom-post-type-ui" ),
+		"use_featured_image" => __( "Use as featured image for this Video", "custom-post-type-ui" ),
+		"archives" => __( "Video archives", "custom-post-type-ui" ),
+		"insert_into_item" => __( "Insert into Video", "custom-post-type-ui" ),
+		"uploaded_to_this_item" => __( "Upload to this Video", "custom-post-type-ui" ),
+		"filter_items_list" => __( "Filter Videos list", "custom-post-type-ui" ),
+		"items_list_navigation" => __( "Videos list navigation", "custom-post-type-ui" ),
+		"items_list" => __( "Videos list", "custom-post-type-ui" ),
+		"attributes" => __( "Videos attributes", "custom-post-type-ui" ),
+		"name_admin_bar" => __( "Video", "custom-post-type-ui" ),
+		"item_published" => __( "Video published", "custom-post-type-ui" ),
+		"item_published_privately" => __( "Video published privately.", "custom-post-type-ui" ),
+		"item_reverted_to_draft" => __( "Video reverted to draft.", "custom-post-type-ui" ),
+		"item_scheduled" => __( "Video scheduled", "custom-post-type-ui" ),
+		"item_updated" => __( "Video updated.", "custom-post-type-ui" ),
+		"parent_item_colon" => __( "Parent Video:", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Videos", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "videos", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-format-video",
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"taxonomies" => [ "videos" ],
+	];
+
+	register_post_type( "videos", $args );
+
+	/**
+	 * Post Type: Women in Sport.
+	 */
+
+	$labels = [
+		"name" => __( "Women in Sport", "custom-post-type-ui" ),
+		"singular_name" => __( "Woman in Sport", "custom-post-type-ui" ),
+		"menu_name" => __( "Women in Sport", "custom-post-type-ui" ),
+		"all_items" => __( "All Women in Sport", "custom-post-type-ui" ),
+		"add_new" => __( "Add new", "custom-post-type-ui" ),
+		"add_new_item" => __( "Add new Woman in Sport", "custom-post-type-ui" ),
+		"edit_item" => __( "Edit Woman in Sport", "custom-post-type-ui" ),
+		"new_item" => __( "New Woman in Sport", "custom-post-type-ui" ),
+		"view_item" => __( "View Woman in Sport", "custom-post-type-ui" ),
+		"view_items" => __( "View Women in Sport", "custom-post-type-ui" ),
+		"search_items" => __( "Search Women in Sport", "custom-post-type-ui" ),
+		"not_found" => __( "No Women in Sport found", "custom-post-type-ui" ),
+		"not_found_in_trash" => __( "No Women in Sport found in bin", "custom-post-type-ui" ),
+		"parent" => __( "Parent Woman in Sport:", "custom-post-type-ui" ),
+		"featured_image" => __( "Featured image for this Woman in Sport", "custom-post-type-ui" ),
+		"set_featured_image" => __( "Set featured image for this Woman in Sport", "custom-post-type-ui" ),
+		"remove_featured_image" => __( "Remove featured image for this Woman in Sport", "custom-post-type-ui" ),
+		"use_featured_image" => __( "Use as featured image for this Woman in Sport", "custom-post-type-ui" ),
+		"archives" => __( "Woman in Sport archives", "custom-post-type-ui" ),
+		"insert_into_item" => __( "Insert into Woman in Sport", "custom-post-type-ui" ),
+		"uploaded_to_this_item" => __( "Upload to this Woman in Sport", "custom-post-type-ui" ),
+		"filter_items_list" => __( "Filter Women in Sport list", "custom-post-type-ui" ),
+		"items_list_navigation" => __( "Women in Sport list navigation", "custom-post-type-ui" ),
+		"items_list" => __( "Women in Sport list", "custom-post-type-ui" ),
+		"attributes" => __( "Women in Sport attributes", "custom-post-type-ui" ),
+		"name_admin_bar" => __( "Woman in Sport", "custom-post-type-ui" ),
+		"item_published" => __( "Woman in Sport published", "custom-post-type-ui" ),
+		"item_published_privately" => __( "Woman in Sport published privately.", "custom-post-type-ui" ),
+		"item_reverted_to_draft" => __( "Woman in Sport reverted to draft.", "custom-post-type-ui" ),
+		"item_scheduled" => __( "Woman in Sport scheduled", "custom-post-type-ui" ),
+		"item_updated" => __( "Woman in Sport updated.", "custom-post-type-ui" ),
+		"parent_item_colon" => __( "Parent Woman in Sport:", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Women in Sport", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "women_sport", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-megaphone",
+		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
+	];
+
+	register_post_type( "women_sport", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts' );

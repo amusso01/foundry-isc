@@ -66,8 +66,8 @@ get_header();
 					<div class="number__line-green"></div>
 				</div>
 				<div class="numbers__body">
-					<p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</strong></p>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+					<p><strong>iSportConnect can help businesses both within the sports industry and looking to enter the sports industry
+through our market intelligence, industry connections</strong></p>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-6 numbers__column numbers__rolling">
@@ -118,12 +118,12 @@ get_header();
 		</div>
 	</section>
 
-	<section class="row row-block consultancy-video-section">
-	<div class="col-xs-12">
-        <h2>Testimonials</h2>
-    </div>
-	<?php get_template_part( 'components/page/video-loop' ) ?>
-	<?php get_template_part( 'components/carousel/testimonial-carousel' ) ?>
+	<section id="testimonials" class="row row-block consultancy-video-section">
+		<div class="col-xs-12">
+			<h2>Consultancy Testimonials</h2>
+		</div>
+		<?php get_template_part( 'components/page/video-loop' ) ?>
+		<?php get_template_part( 'components/carousel/testimonial-carousel' ) ?>
 	</section>
 	
 

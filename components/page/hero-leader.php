@@ -20,7 +20,7 @@ $excerpt = get_field('banner_intro');
 flex-direction: column;
 justify-content: center;'?>">
 			<p class="header-display"><?php echo is_singular( 'leadership_team' ) ? 'leadership team' : the_title(); ?></p>
-			<h1><?php the_title(); ?></h1>
+			<h1><?php echo  is_page('consultancy') ? 'iSportConnect - A Digital Community' : the_title(); ?></h1>
 			<p><?php echo $excerpt ?></p>
 			<?php if (is_singular( 'leadership_team' )) : ?>
 			<p><span>Role:</span> <?php echo $role ?></p>

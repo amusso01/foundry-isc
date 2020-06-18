@@ -30,8 +30,10 @@
 @import "components/social";
 @import "components/banner-image";
 @import "components/banner-image-title";
+@import "components/banner-events";
 @import "components/videos";
 @import "components/carousel";
+@import "components/landing-events-card";
 
 // Templates
 @import "templates/single-column";
@@ -43,3 +45,4 @@
 @import "templates/testimonials";
 @import "templates/consultancy";
 @import "templates/women";
+@import "templates/events";
