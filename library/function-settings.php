@@ -80,6 +80,11 @@ if ( ! function_exists( 'foundry_setup' ) ) :
 		wp_register_style( 'foundry-styles', get_template_directory_uri() . '/dist/styles/' . foundry_asset_path( 'main.css' ), array('root-styles'), '1.0', 'all' );
 		wp_enqueue_style( 'foundry-styles' );
 		
+
+
+		wp_register_style( 'col-foundry-styles', get_template_directory_uri() . '/dist/styles/' . foundry_asset_path( 'col-main.css' ), array('root-styles'), '1.0', 'all' );
+		wp_enqueue_style( 'col-foundry-styles' );
+
 		// SCRIPT
 		wp_dequeue_script( 'jquery' );
 		wp_deregister_script( 'jquery' );
@@ -565,3 +570,246 @@ function cptui_register_my_cpts() {
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
+
+
+
+	/**
+	 * Post Type: Marketplace.
+	 * Author: jonathan
+	 */
+
+add_action( 'init', 'custom_post_marketplace_type', 0 );
+function custom_post_marketplace_type() {
+ 
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Marketplace', 'Post Type General Name' ),
+        'singular_name'       => _x( 'Marketplace', 'Post Type Singular Name' ),
+        'menu_name'           => __( 'Marketplace' ),
+        'parent_item_colon'   => __( 'Parent Marketplace posts' ),
+        'all_items'           => __( 'All Marketplace posts' ),
+        'view_item'           => __( 'View Marketplace post' ),
+        'add_new_item'        => __( 'Add New Marketplace post' ),
+        'add_new'             => __( 'Add New' ),
+        'edit_item'           => __( 'Edit Post' ),
+        'update_item'         => __( 'Update Post' ),
+        'search_items'        => __( 'Search Post' ),
+        'not_found'           => __( 'Not Found' ),
+        'not_found_in_trash'  => __( 'Not found in Trash' ),
+    );
+     
+// Set other options for Custom Post Type
+     
+    $args = array(
+        'label'               => __( 'Marketplace' ),
+        'description'         => __( 'Marketplace posts news and reviews' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor',  'author', 'thumbnail',  'custom-fields' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+    	'taxonomies'          => array( 'categorie_marketplace' ),
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+		"rewrite" => [ "slug" => "marketplace", "with_front" => true ],
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'menu_icon'           => 'dashicons-forms',
+        'show_in_rest' => true,
+ 
+    );
+     
+    // Registering your Custom Post Type
+    register_post_type( 'marketplaces', $args );
+ 
+}
+
+
+
+	/**
+	 * Post Type taxonomies: Marketplace.
+	 * Author: jonathan
+	 */
+
+add_action( 'init', 'create_marketplace_taxonomies', 0 );
+function create_marketplace_taxonomies() {
+
+    register_taxonomy(
+        'marketplace_categorie',
+        'marketplaces',
+        array(
+            'labels' => array(
+                'name' => 'Marketplace Category',
+                'add_new_item' => 'Add New Categorie',
+                'new_item_name' => "New Categorie"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => true,
+            'public'       => true,
+            'hierarchical' => true
+        )
+    );
+    register_taxonomy(
+        'marketplace_tags',
+        'marketplaces',
+        array(
+            'labels' => array(
+                'name' => 'Marketplace Tags',
+                'add_new_item' => 'Add New tag',
+                'new_item_name' => "New Tag"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'public'       => true,
+            'hierarchical' => true
+        )
+    );
+    register_taxonomy(
+        'marketplace_location',
+        'marketplaces',
+        array(
+            'labels' => array(
+                'name' => 'Marketplace Location',
+                'add_new_item' => 'Add New location',
+                'new_item_name' => "New Location"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'public'       => true,
+            'hierarchical' => true
+        )
+    );
+}
+
+
+	/**
+	 * Post Type: Events.
+	 * Author: jonathan
+	 */
+
+add_action( 'init', 'custom_post_events_type', 0 );
+function custom_post_events_type() {
+ 
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Events', 'Post Type General Name' ),
+        'singular_name'       => _x( 'Event', 'Post Type Singular Name' ),
+        'menu_name'           => __( 'Events' ),
+        'parent_item_colon'   => __( 'Parent Events posts' ),
+        'all_items'           => __( 'All Events posts' ),
+        'view_item'           => __( 'View Events post' ),
+        'add_new_item'        => __( 'Add New Events post' ),
+        'add_new'             => __( 'Add New' ),
+        'edit_item'           => __( 'Edit Post' ),
+        'update_item'         => __( 'Update Post' ),
+        'search_items'        => __( 'Search Post' ),
+        'not_found'           => __( 'Not Found' ),
+        'not_found_in_trash'  => __( 'Not found in Trash' ),
+    );
+     
+// Set other options for Custom Post Type
+     
+    $args = array(
+        'label'               => __( 'Events' ),
+        'description'         => __( 'Events posts news and reviews' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor',  'author', 'thumbnail',  'custom-fields' ),
+        // You can associate this CPT with a taxonomy or custom taxonomy. 
+    	'taxonomies'          => array( 'categorie_events' ),
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+		"rewrite" => [ "slug" => "event", "with_front" => true ],
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'menu_icon'           => 'dashicons-welcome-write-blog',
+        'show_in_rest' => true,
+ 
+    );
+     
+    // Registering your Custom Post Type
+    register_post_type( 'event', $args );
+ 
+}
+
+
+
+	/**
+	 * Post Type taxonomies: Events.
+	 * Author: jonathan
+	 */
+
+add_action( 'init', 'create_event_taxonomies', 0 );
+function create_event_taxonomies() {
+
+    register_taxonomy(
+        'event_categorie',
+        'event',
+        array(
+            'labels' => array(
+                'name' => 'Event Category',
+                'add_new_item' => 'Add New Categorie',
+                'new_item_name' => "New Categorie"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => true,
+            'public'       => true,
+            'hierarchical' => true
+        )
+    );
+    register_taxonomy(
+        'event_location',
+        'event',
+        array(
+            'labels' => array(
+                'name' => 'Event Location',
+                'add_new_item' => 'Add New location',
+                'new_item_name' => "New Location"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'public'       => true,
+            'hierarchical' => true
+        )
+    );
+}
+
+
+
+
+
+
+
+function pagination_bar( $custom_query ) {
+
+    $total_pages = $custom_query->max_num_pages;
+    $big = 999999999; // need an unlikely integer
+
+    if ($total_pages > 1){
+    	$current_page = max(1, get_query_var('paged'));
+
+        echo paginate_links(array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => $current_page,
+            'total' => $total_pages
+        ));
+    }
+}

@@ -1,0 +1,49 @@
+.signUp-banner {
+  height: 200px;
+  width: 100%;
+  background-color: $color__bg;
+  display: flex;
+  align-items: center;
+  padding: 20px 1rem;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0px;
+  z-index: 100;
+  transform: translateY(180px);
+  transition: 0.3s ease-in-out;
+  @media #{$breakpoint-sm-up} {
+    padding: 20px 4rem;
+    height: 150px;
+  }
+  &.signUp-banner-up {
+    transform: translateY(0px);
+  }
+  &__info {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    @media #{$breakpoint-md-up} {
+      margin-bottom: 0px;
+    }
+
+    > p {
+      color: $color__bright;
+      font-weight: 600;
+      font-size: 18px;
+      margin-right: 50px;
+      margin-bottom: 10px;
+      @media #{$breakpoint-sm-up} {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  &__cta {
+    .btn {
+      min-width: 180px;
+      min-height: 55px;
+      font-size: 15px;
+    }
+  }
+}

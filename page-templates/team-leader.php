@@ -23,8 +23,7 @@ $title = $right_post->post_title;
 $role = get_field('member_role', $post_id);
 $image =get_field('image', $post_id);
 $url = get_the_permalink( $post_id );
-$own = get_field('has_its_own_page', $post_id);
-
+$own = get_field('has_its_own_page', $postId);
 ?>
 
 <?php get_template_part( 'components/page/hero-leader' ) ?>
@@ -60,7 +59,7 @@ $own = get_field('has_its_own_page', $post_id);
 		<?php endif; ?>
 		</div>
 		<?php if($own) : ?>
-		<div class="col-xs-11 col-xs-offset-1 col-sm-6 col-md-4">
+		<div class="col-xs-11 col-xs-offset-1 col-sm-4 col-md-4">
 			<a href="<?php echo $url ?>">
 				<div class="leaderNext">
 					<div class="leaderNext__image">

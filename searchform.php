@@ -26,7 +26,8 @@ if ( get_search_query() ) {
 
 	<input type="text" value="<?php echo esc_attr( $value ); ?>" name="s" id="s" placeholder="<?php esc_html_e( 'What are you looking for?',
 		'foundry' ); ?>" class="search-form-input" />
-
-	<button type="submit" id="searchsubmit" class="search-form-button"><?php esc_html_e( 'Search', 'foundry' ); ?></button>
+<div class="btn__wrapper">
+	<button type="submit" id="searchsubmit" class="btn search-form-button"><?php esc_html_e( 'Search', 'foundry' ); ?></button>
+</div>
 
 </form>

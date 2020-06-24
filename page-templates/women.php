@@ -15,6 +15,7 @@
 $args = array(
 	'post_type'     => 'women_sport',
 	'post_status'   => 'published',
+	'posts_per_page' => -1,
 );
 
 $the_women = new WP_Query( $args );
@@ -42,7 +43,7 @@ get_header();
 			<?php echo $own_page ? '<a href="'. get_the_permalink().'">' : ' ' ?>
 			<div class="profile-card <?php echo $own_page ? '' : 'no-hover'; ?>">
 				<div class="profile-card__image">
-					<img src="<?php echo $womanImage ?>" alt="woman in sport image">
+					<img class="lozad" data-src="<?php echo $womanImage ?>" alt="woman in sport image">
 					<?php if($own_page) : ?>
 					<div class="slider slider__right slider__big	">
 						<?php get_template_part( 'svg-template/svg', 'chevron' ) ?>

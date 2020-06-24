@@ -1,4 +1,7 @@
 .ads-landscape {
   max-width: 1440px;
-  margin: auto;
+  margin: 5px auto;
+  > img {
+    margin: auto;
+  }
 }

@@ -229,6 +229,8 @@ endif;
 </div>
 
 
+
+
 <!-- COUNTDOWN  FOR EVENTS -->
 <?php 
 $eventDate = get_field('event_date');
@@ -307,6 +309,9 @@ if($secondsLeft >= 0){
 		</div>
 	</div>
 </div>
+
+
+<?php get_template_part( 'components/carousel/full-carousel' ) ?>
 
 
 <!-- ADS Portrait -->

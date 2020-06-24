@@ -52,7 +52,3 @@ require get_template_directory() . '/library/function-guttenberg.php';
 ==================================================================================*/
 // custom functions like shortcodes should be added here
 require get_template_directory() . '/library/function-custom.php';
-
-
-
-

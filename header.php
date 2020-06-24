@@ -43,10 +43,10 @@ $displaySocial = get_theme_mod('display-social');
 			<?php get_template_part( 'components/header/logo' ); ?>
 			<?php get_template_part( 'components/navigation/primary' ); ?>
 			<?php get_template_part( 'components/header/login-menu' ); ?>
-			<!-- <?php get_search_form(); ?>  -->
+			<?php get_search_form(); ?> 
 			<?php get_template_part( 'components/header/hamburger' ); ?>
 		</div>
 	</header><!-- .site-header -->
-
-
+	
+	
 	<div id="content" class="site-content">

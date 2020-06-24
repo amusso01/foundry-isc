@@ -3,7 +3,9 @@ import lozad from "lozad";
 import hamburger from "./../part/hamburger";
 import navDropdown from "./../part/navDropdown";
 import countdown from "./../part/countdown";
+import bottomBanner from "./../part/bottomBanner";
 import carousel from "./../part/carousel";
+import carouselFull from "./../part/carouselFull";
 import sharing from "./../part/share";
 
 export default {
@@ -22,6 +24,9 @@ export default {
     // Countdown
     countdown();
 
+    // Bottom banner
+    bottomBanner();
+
     // Lazy load image with lozad.js https://github.com/ApoorvSaxena/lozad.js
     const lazyObserver = lozad(".lozad", {
       load: function(el) {
@@ -34,6 +39,11 @@ export default {
     const slider = document.getElementById("slider");
     if (typeof slider != "undefined" && slider != null) {
       carousel();
+    }
+
+    const fullCarousel = document.getElementById("swiperFull");
+    if (typeof fullCarousel != "undefined" && fullCarousel != null) {
+      carouselFull();
     }
 
     // Share

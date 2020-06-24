@@ -117,8 +117,14 @@
       }
       &.menu-item-has-children {
         position: relative;
+        @media #{$breakpoint-md-up} {
+          margin-right: 8px;
+        }
         > a {
           pointer-events: none;
+          @media #{$breakpoint-md-up} {
+            pointer-events: all;
+          }
         }
         &:after {
           content: "";
@@ -129,7 +135,7 @@
           right: 20px;
           width: 13px;
           height: 8px;
-          margin-left: 5px;
+          margin-left: 6px;
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13.441' height='6.851' viewBox='0 0 13.441 6.851'%3E%3Cpath data-name='Path 143' d='M.5.967A.408.408 0 01.76.62a.881.881 0 01.91.087l5.05 4.49 5.05-4.49a.88.88 0 01.91-.087c.287.144.346.415.13.607L7.241 6.179a.866.866 0 01-1.039 0L.633 1.227A.348.348 0 01.5.967z' fill='%2309bfa1' stroke='%2309bfa1'/%3E%3C/svg%3E");
           @media #{$breakpoint-md-up} {
             left: 100%;
@@ -139,13 +145,39 @@
           display: none;
           position: relative;
           top: 13px;
-
+          @media #{$breakpoint-md-up} {
+            display: block;
+            position: absolute;
+            top: 100%;
+            width: 240px;
+            background: white;
+            opacity: 0;
+            pointer-events: none;
+          }
           .menu-item {
             padding-left: 0px;
             border-top: none;
             min-height: 40px;
             min-height: 45px;
             display: block;
+            @media #{$breakpoint-md-up} {
+              margin-left: 0px;
+              border-bottom: 1px solid $color__grey;
+              display: flex;
+              align-items: center;
+              padding-left: 5px;
+
+              > a {
+                position: relative;
+              }
+              &:last-of-type {
+                > a {
+                  &::after {
+                    display: block;
+                  }
+                }
+              }
+            }
           }
         }
         &.open {

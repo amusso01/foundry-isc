@@ -126,7 +126,8 @@ through our market intelligence, industry connections</strong></p>
 		<?php get_template_part( 'components/carousel/testimonial-carousel' ) ?>
 	</section>
 	
-
+	
+	<?php get_template_part( 'components/page/sign-up-banner') ?>
 
 </main>
 

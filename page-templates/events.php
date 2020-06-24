@@ -17,6 +17,8 @@ get_header();
 
 <?php get_template_part( 'components/page/events-landing-card' ) ?>
 
+<?php get_template_part( 'components/page/events-landing-post' ) ?>
+
 <main role="main" class="site-main events-main">
 	
 	<?php 
