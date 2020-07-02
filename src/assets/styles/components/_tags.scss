@@ -6,7 +6,6 @@
   background-color: $color__main;
   padding: 0px 5px;
   display: inline-block;
-  cursor: pointer;
   transition: 0.3s;
   &:hover {
     background-color: #1fb29a;
@@ -17,7 +16,8 @@
     background-color: rgba(#09bfa1, 0.15);
     color: $color__main;
     &:hover {
-      color: $color__bright;
+      background-color: rgba(#09bfa1, 0.15);
+      color: $color__main;
     }
   }
   &-large {

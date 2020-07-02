@@ -25,9 +25,6 @@ get_header(); ?>
 		<div class="col-xs-11 col-sm-8 col-md-8">
 
 			<?php if(	!isset($_POST['ser']) ){ ?>
-				<div id="feathured-post">
-					<h4>Featured</h4>
-					<div class="white-line-box"></div>
 					<?php 
 						$loop = new WP_Query( array( 'post_type' => 'marketplaces',
 											        	'posts_per_page' => 2,
@@ -40,15 +37,18 @@ get_header(); ?>
 																        	)
 													)
 											);
-						if ( $loop->have_posts() ):
-						    while ( $loop->have_posts() ) : $loop->the_post(); 
+						if ( $loop->have_posts() ): ?>
+							<div id="feathured-post">
+								<h4>Featured</h4>
+								<div class="white-line-box"></div>
+										    <?php while ( $loop->have_posts() ) : $loop->the_post(); 
 
-								get_template_part( 'template-parts/content', 'box-marketplace' );
-						   	endwhile; ?>
-						<?php wp_reset_postdata();
-						endif;
+												get_template_part( 'template-parts/content', 'box-marketplace' );
+										   	endwhile; ?>
+										<?php wp_reset_postdata(); ?> 
+								</div>
+						<?php endif;
 					?>
-				</div>
 			<?php } ?>
 		
 		<div id="list-of-post"></div>

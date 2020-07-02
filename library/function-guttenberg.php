@@ -58,3 +58,29 @@ Allow certain block on Guttenberg
 }
 
 add_filter( 'allowed_block_types', 'misha_allowed_block_types' );*/
+
+/*==================================================================================
+Register new category in guttenberg block
+==================================================================================*/
+
+function my_foundry_category( $categories, $post ) {
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'fd-category',
+				'title' => __( 'FD Category', 'fd-category' ),
+			),
+		)
+	);
+}
+add_filter( 'block_categories', 'my_foundry_category', 10, 2);
+
+
+/*==================================================================================
+  LOAD CUSTOM ACF-GUTENBERG-BLOCKS
+==================================================================================*/
+
+/* hero
+/––––––––––––––––––––––––*/
+require get_template_directory().'/template-parts/blocks/block-quote.php';

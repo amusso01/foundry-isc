@@ -1,0 +1,19 @@
+#totalpoll {
+  margin-top: 60px;
+  .totalpoll-container {
+    margin: 0px 0px !important;
+    width: 300px;
+  }
+  .totalpoll-buttons {
+    justify-content: flex-start !important;
+  }
+  label.totalpoll-question-choices-item {
+    padding-left: 0px !important;
+  }
+  .totalpoll-question-content {
+    p {
+      font-weight: 700 !important;
+      font-size: 21px !important;
+    }
+  }
+}

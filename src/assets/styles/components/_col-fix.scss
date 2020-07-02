@@ -1,0 +1,33 @@
+.marketplace-main {
+  .card__body-header {
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+// video category
+.video-category-main {
+  padding: 20px 0px 90px;
+  .card__image {
+    max-height: 250px;
+  }
+  .ads-landscape {
+    padding: 60px 0px;
+  }
+  .post-head-cat {
+    margin-top: 60px;
+  }
+}
+
+.single-main {
+  .widget-area {
+    padding: 40px 0px;
+  }
+}
+
+// card fix
+.card__image {
+  min-height: 225px;
+  background-size: cover;
+}

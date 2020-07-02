@@ -7,7 +7,7 @@ footer.site-footer {
   padding-bottom: 1px;
   background-image: url(./../images/cropped-logo.svg);
   @media #{$breakpoint-sm-up} {
-    background-position: top 30px left 40px;
+    background-position: top 71px left 40px;
   }
   p {
     color: $color__bright;
@@ -49,6 +49,17 @@ footer.site-footer {
       justify-items: start;
       @media #{$breakpoint-sm-up} {
         justify-items: center;
+      }
+      .menu {
+        > li {
+          &:first-of-type {
+            margin-bottom: 10px;
+            > a {
+              color: $color__main;
+              text-transform: uppercase;
+            }
+          }
+        }
       }
     }
   }

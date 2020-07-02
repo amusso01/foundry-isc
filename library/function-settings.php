@@ -94,6 +94,9 @@ if ( ! function_exists( 'foundry_setup' ) ) :
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
+
+
 	}
 	add_action( 'wp_enqueue_scripts', 'foundry_scripts' );
 
@@ -367,7 +370,7 @@ function foundry_pagination( \WP_Query $wp_query = null, $echo = true ) {
 	return null;
 }
 
-/* 2.7 CUSTOM PAGINATION
+/* 2.8 CUSTOM POST TYPE
 /–––––––––––––––––––––––––––––––––*/
 
 function cptui_register_my_cpts() {
@@ -377,38 +380,38 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Leadership Team", "custom-post-type-ui" ),
-		"singular_name" => __( "Leadership Teams", "custom-post-type-ui" ),
-		"menu_name" => __( "Leadership Team", "custom-post-type-ui" ),
-		"all_items" => __( "All Leadership Team", "custom-post-type-ui" ),
+		"name" => __( "Team", "custom-post-type-ui" ),
+		"singular_name" => __( "Teams", "custom-post-type-ui" ),
+		"menu_name" => __( "Team", "custom-post-type-ui" ),
+		"all_items" => __( "All Team", "custom-post-type-ui" ),
 		"add_new" => __( "Add new", "custom-post-type-ui" ),
-		"add_new_item" => __( "Add new Leadership Teams", "custom-post-type-ui" ),
-		"edit_item" => __( "Edit Leadership Teams", "custom-post-type-ui" ),
-		"new_item" => __( "New Leadership Teams", "custom-post-type-ui" ),
-		"view_item" => __( "View Leadership Teams", "custom-post-type-ui" ),
-		"view_items" => __( "View Leadership Team", "custom-post-type-ui" ),
-		"search_items" => __( "Search Leadership Team", "custom-post-type-ui" ),
-		"not_found" => __( "No Leadership Team found", "custom-post-type-ui" ),
-		"not_found_in_trash" => __( "No Leadership Team found in trash", "custom-post-type-ui" ),
-		"parent" => __( "Parent Leadership Teams:", "custom-post-type-ui" ),
-		"featured_image" => __( "Featured image for this Leadership Teams", "custom-post-type-ui" ),
-		"set_featured_image" => __( "Set featured image for this Leadership Teams", "custom-post-type-ui" ),
-		"remove_featured_image" => __( "Remove featured image for this Leadership Teams", "custom-post-type-ui" ),
-		"use_featured_image" => __( "Use as featured image for this Leadership Teams", "custom-post-type-ui" ),
-		"archives" => __( "Leadership Teams archives", "custom-post-type-ui" ),
-		"insert_into_item" => __( "Insert into Leadership Teams", "custom-post-type-ui" ),
-		"uploaded_to_this_item" => __( "Upload to this Leadership Teams", "custom-post-type-ui" ),
-		"filter_items_list" => __( "Filter Leadership Team list", "custom-post-type-ui" ),
-		"items_list_navigation" => __( "Leadership Team list navigation", "custom-post-type-ui" ),
-		"items_list" => __( "Leadership Team list", "custom-post-type-ui" ),
-		"attributes" => __( "Leadership Team attributes", "custom-post-type-ui" ),
-		"name_admin_bar" => __( "Leadership Teams", "custom-post-type-ui" ),
-		"item_published" => __( "Leadership Teams published", "custom-post-type-ui" ),
-		"item_published_privately" => __( "Leadership Teams published privately.", "custom-post-type-ui" ),
-		"item_reverted_to_draft" => __( "Leadership Teams reverted to draft.", "custom-post-type-ui" ),
-		"item_scheduled" => __( "Leadership Teams scheduled", "custom-post-type-ui" ),
-		"item_updated" => __( "Leadership Teams updated.", "custom-post-type-ui" ),
-		"parent_item_colon" => __( "Parent Leadership Teams:", "custom-post-type-ui" ),
+		"add_new_item" => __( "Add new Teams", "custom-post-type-ui" ),
+		"edit_item" => __( "Edit Teams", "custom-post-type-ui" ),
+		"new_item" => __( "New Teams", "custom-post-type-ui" ),
+		"view_item" => __( "View Teams", "custom-post-type-ui" ),
+		"view_items" => __( "View Team", "custom-post-type-ui" ),
+		"search_items" => __( "Search Team", "custom-post-type-ui" ),
+		"not_found" => __( "No Team found", "custom-post-type-ui" ),
+		"not_found_in_trash" => __( "No Team found in trash", "custom-post-type-ui" ),
+		"parent" => __( "Parent Teams:", "custom-post-type-ui" ),
+		"featured_image" => __( "Featured image for this Teams", "custom-post-type-ui" ),
+		"set_featured_image" => __( "Set featured image for this Teams", "custom-post-type-ui" ),
+		"remove_featured_image" => __( "Remove featured image for this Teams", "custom-post-type-ui" ),
+		"use_featured_image" => __( "Use as featured image for this Teams", "custom-post-type-ui" ),
+		"archives" => __( "Teams archives", "custom-post-type-ui" ),
+		"insert_into_item" => __( "Insert into Teams", "custom-post-type-ui" ),
+		"uploaded_to_this_item" => __( "Upload to this Teams", "custom-post-type-ui" ),
+		"filter_items_list" => __( "Filter Team list", "custom-post-type-ui" ),
+		"items_list_navigation" => __( "Team list navigation", "custom-post-type-ui" ),
+		"items_list" => __( "Team list", "custom-post-type-ui" ),
+		"attributes" => __( "Team attributes", "custom-post-type-ui" ),
+		"name_admin_bar" => __( "Teams", "custom-post-type-ui" ),
+		"item_published" => __( "Teams published", "custom-post-type-ui" ),
+		"item_published_privately" => __( "Teams published privately.", "custom-post-type-ui" ),
+		"item_reverted_to_draft" => __( "Teams reverted to draft.", "custom-post-type-ui" ),
+		"item_scheduled" => __( "Teams scheduled", "custom-post-type-ui" ),
+		"item_updated" => __( "Teams updated.", "custom-post-type-ui" ),
+		"parent_item_colon" => __( "Parent Teams:", "custom-post-type-ui" ),
 	];
 
 	$args = [
@@ -429,7 +432,7 @@ function cptui_register_my_cpts() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "leadership_team", "with_front" => true ],
+		"rewrite" => [ "slug" => "team", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => "dashicons-businesswoman",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
@@ -508,42 +511,42 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Women in Sport", "custom-post-type-ui" ),
-		"singular_name" => __( "Woman in Sport", "custom-post-type-ui" ),
-		"menu_name" => __( "Women in Sport", "custom-post-type-ui" ),
-		"all_items" => __( "All Women in Sport", "custom-post-type-ui" ),
+		"name" => __( "Ranking", "custom-post-type-ui" ),
+		"singular_name" => __( "Ranking", "custom-post-type-ui" ),
+		"menu_name" => __( "Ranking", "custom-post-type-ui" ),
+		"all_items" => __( "All Ranking", "custom-post-type-ui" ),
 		"add_new" => __( "Add new", "custom-post-type-ui" ),
-		"add_new_item" => __( "Add new Woman in Sport", "custom-post-type-ui" ),
-		"edit_item" => __( "Edit Woman in Sport", "custom-post-type-ui" ),
-		"new_item" => __( "New Woman in Sport", "custom-post-type-ui" ),
-		"view_item" => __( "View Woman in Sport", "custom-post-type-ui" ),
-		"view_items" => __( "View Women in Sport", "custom-post-type-ui" ),
-		"search_items" => __( "Search Women in Sport", "custom-post-type-ui" ),
-		"not_found" => __( "No Women in Sport found", "custom-post-type-ui" ),
-		"not_found_in_trash" => __( "No Women in Sport found in bin", "custom-post-type-ui" ),
-		"parent" => __( "Parent Woman in Sport:", "custom-post-type-ui" ),
-		"featured_image" => __( "Featured image for this Woman in Sport", "custom-post-type-ui" ),
-		"set_featured_image" => __( "Set featured image for this Woman in Sport", "custom-post-type-ui" ),
-		"remove_featured_image" => __( "Remove featured image for this Woman in Sport", "custom-post-type-ui" ),
-		"use_featured_image" => __( "Use as featured image for this Woman in Sport", "custom-post-type-ui" ),
-		"archives" => __( "Woman in Sport archives", "custom-post-type-ui" ),
-		"insert_into_item" => __( "Insert into Woman in Sport", "custom-post-type-ui" ),
-		"uploaded_to_this_item" => __( "Upload to this Woman in Sport", "custom-post-type-ui" ),
-		"filter_items_list" => __( "Filter Women in Sport list", "custom-post-type-ui" ),
-		"items_list_navigation" => __( "Women in Sport list navigation", "custom-post-type-ui" ),
-		"items_list" => __( "Women in Sport list", "custom-post-type-ui" ),
-		"attributes" => __( "Women in Sport attributes", "custom-post-type-ui" ),
-		"name_admin_bar" => __( "Woman in Sport", "custom-post-type-ui" ),
-		"item_published" => __( "Woman in Sport published", "custom-post-type-ui" ),
-		"item_published_privately" => __( "Woman in Sport published privately.", "custom-post-type-ui" ),
-		"item_reverted_to_draft" => __( "Woman in Sport reverted to draft.", "custom-post-type-ui" ),
-		"item_scheduled" => __( "Woman in Sport scheduled", "custom-post-type-ui" ),
-		"item_updated" => __( "Woman in Sport updated.", "custom-post-type-ui" ),
-		"parent_item_colon" => __( "Parent Woman in Sport:", "custom-post-type-ui" ),
+		"add_new_item" => __( "Add new Ranking", "custom-post-type-ui" ),
+		"edit_item" => __( "Edit Ranking", "custom-post-type-ui" ),
+		"new_item" => __( "New Ranking", "custom-post-type-ui" ),
+		"view_item" => __( "View Ranking", "custom-post-type-ui" ),
+		"view_items" => __( "View Ranking", "custom-post-type-ui" ),
+		"search_items" => __( "Search Ranking", "custom-post-type-ui" ),
+		"not_found" => __( "No Ranking found", "custom-post-type-ui" ),
+		"not_found_in_trash" => __( "No Ranking found in bin", "custom-post-type-ui" ),
+		"parent" => __( "Parent Ranking:", "custom-post-type-ui" ),
+		"featured_image" => __( "Featured image for this Ranking", "custom-post-type-ui" ),
+		"set_featured_image" => __( "Set featured image for this Ranking", "custom-post-type-ui" ),
+		"remove_featured_image" => __( "Remove featured image for this Ranking", "custom-post-type-ui" ),
+		"use_featured_image" => __( "Use as featured image for this Ranking", "custom-post-type-ui" ),
+		"archives" => __( "Ranking archives", "custom-post-type-ui" ),
+		"insert_into_item" => __( "Insert into Ranking", "custom-post-type-ui" ),
+		"uploaded_to_this_item" => __( "Upload to this Ranking", "custom-post-type-ui" ),
+		"filter_items_list" => __( "Filter Ranking list", "custom-post-type-ui" ),
+		"items_list_navigation" => __( "Ranking list navigation", "custom-post-type-ui" ),
+		"items_list" => __( "Ranking list", "custom-post-type-ui" ),
+		"attributes" => __( "Ranking attributes", "custom-post-type-ui" ),
+		"name_admin_bar" => __( "Ranking", "custom-post-type-ui" ),
+		"item_published" => __( "Ranking published", "custom-post-type-ui" ),
+		"item_published_privately" => __( "Ranking published privately.", "custom-post-type-ui" ),
+		"item_reverted_to_draft" => __( "Ranking reverted to draft.", "custom-post-type-ui" ),
+		"item_scheduled" => __( "Ranking scheduled", "custom-post-type-ui" ),
+		"item_updated" => __( "Ranking updated.", "custom-post-type-ui" ),
+		"parent_item_colon" => __( "Parent Ranking:", "custom-post-type-ui" ),
 	];
 
 	$args = [
-		"label" => __( "Women in Sport", "custom-post-type-ui" ),
+		"label" => __( "Ranking", "custom-post-type-ui" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -560,13 +563,13 @@ function cptui_register_my_cpts() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "women_sport", "with_front" => true ],
+		"rewrite" => [ "slug" => "ranking", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => "dashicons-megaphone",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
 	];
 
-	register_post_type( "women_sport", $args );
+	register_post_type( "ranking", $args );
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
@@ -654,7 +657,12 @@ function create_marketplace_taxonomies() {
             'show_ui' => true,
             'show_tagcloud' => true,
             'public'       => true,
-            'hierarchical' => true
+            'hierarchical' => true,
+            'show_ui'           => true,
+	        'show_admin_column' => true,
+	        'query_var'         => true,
+	        'show_in_nav_menus' => true,
+	        'show_in_rest' => true,
         )
     );
     register_taxonomy(
@@ -669,7 +677,12 @@ function create_marketplace_taxonomies() {
             'show_ui' => true,
             'show_tagcloud' => false,
             'public'       => true,
-            'hierarchical' => true
+            'hierarchical' => true,
+            'show_ui'           => true,
+	        'show_admin_column' => true,
+	        'query_var'         => true,
+	        'show_in_nav_menus' => true,
+	        'show_in_rest' => true,
         )
     );
     register_taxonomy(
@@ -684,7 +697,12 @@ function create_marketplace_taxonomies() {
             'show_ui' => true,
             'show_tagcloud' => false,
             'public'       => true,
-            'hierarchical' => true
+            'hierarchical' => true,
+            'show_ui'           => true,
+	        'show_admin_column' => true,
+	        'query_var'         => true,
+	        'show_in_nav_menus' => true,
+	        'show_in_rest' => true,
         )
     );
 }
@@ -789,9 +807,77 @@ function create_event_taxonomies() {
             'hierarchical' => true
         )
     );
+    register_taxonomy(
+        'event_tags',
+        'event',
+        array(
+            'labels' => array(
+                'name' => 'Event Tags',
+                'add_new_item' => 'Add New tag',
+                'new_item_name' => "New Tag"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'public'       => true,
+            'hierarchical' => true
+        )
+    );
 }
 
 
+
+
+	/**
+	 * Post Type taxonomies: Ranking.
+	 * Author: jonathan
+	 */
+
+add_action( 'init', 'create_ranking_taxonomies', 0 );
+function create_ranking_taxonomies() {
+
+    register_taxonomy(
+        'ranking_categorie',
+        'ranking',
+        array(
+            'labels' => array(
+                'name' => 'Ranking Category',
+                'add_new_item' => 'Add New Categorie',
+                'new_item_name' => "New Categorie"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => true,
+            'public'       => true,
+            'hierarchical' => true,
+            'show_ui'           => true,
+	        'show_admin_column' => true,
+	        'query_var'         => true,
+	        'show_in_nav_menus' => true,
+	        'show_in_rest' => true,
+        
+        )
+    );
+    register_taxonomy(
+        'ranking_tags',
+        'ranking',
+        array(
+            'labels' => array(
+                'name' => 'Ranking Tags',
+                'add_new_item' => 'Add New tag',
+                'new_item_name' => "New Tag"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'public'       => true,
+            'hierarchical' => true,
+            'show_ui'           => true,
+	        'show_admin_column' => true,
+	        'query_var'         => true,
+	        'show_in_nav_menus' => true,
+	        'show_in_rest' => true,
+        
+        )
+    );
+}
 
 
 

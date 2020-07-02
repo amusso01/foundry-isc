@@ -8,7 +8,7 @@
  **/
 $tax = $wp_query->get_queried_object();
 $intro = get_field('banner_intro'); 
-$image = get_the_post_thumbnail_url( );
+$image = get_the_post_thumbnail_url( null, 'full');
 ?>
 
 <section class="section hero-image-title " >

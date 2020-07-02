@@ -16,6 +16,7 @@ Table of Contents:
   3.0 GOOGLE TAG MANAGER
   4.0 SETUP WP-MENUS
   5.0 SETUP LOGIN PAGE 
+  6.0 AJAX
 =======================================================*/
 
 /*==================================================================================
@@ -51,6 +52,7 @@ $GTM_id = '';
 function wpseed_register_theme_menus() {
   register_nav_menus([
     'mainmenu' => __('Main menu'),
+    'loginmenu' => __('Login menu'),
     'footercommunity' => __('Footer community'),
     'footernav' => __('Footer navigation'),
     'footerevents' => __('Footer events'),
@@ -69,3 +71,4 @@ $gFontUrl = "https://fonts.googleapis.com/css2?family=Inter&display=swap";
 $fontFamily = "'Inter', sans-serif";
 $customLogo = get_stylesheet_directory_uri()."/dist/images/foundry-logo.svg";
 $mainColor = "#09BFA1";
+

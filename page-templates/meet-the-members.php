@@ -10,6 +10,8 @@
 
 
 get_header();
+
+
 ?>
 
 <?php get_template_part( 'components/page/hero-image-title' ) ?>
@@ -17,102 +19,26 @@ get_header();
 <main role="main" class="site-main meet-the-members-main">
 
 <div class="row row-block">
-    <article class="card col-xs-12 col-sm-6 col-md-4 col-lg-3   ">
-		<a href="#">
-			<div class="card__inner">
-				<div class="card__image">
-					<img src="<?php echo get_template_directory_uri(  ) ?>/dist/images/card.jpg" alt="Picture of team">
-				</div>
-				<div class="card__body">
-					<div class="card__body-header">
-						<p class="tag">meet the memebr</p>
-						<h4>Meet: Andrea Musso</h4>
-						<p class="text-large">Web developer at Foundry Digital</p>
-					</div>
-				</div>
-			</div>	
-		</a>
-	</article>
-    <article class="card col-xs-12 col-sm-6 col-md-4 col-lg-3   ">
-		<a href="#">
-			<div class="card__inner">
-				<div class="card__image">
-					<img src="<?php echo get_template_directory_uri(  ) ?>/dist/images/card.jpg" alt="Picture of team">
-				</div>
-				<div class="card__body">
-					<div class="card__body-header">
-						<p class="tag">meet the memebr</p>
-						<h4>Meet: Andrea Musso</h4>
-						<p class="text-large">Web developer at Foundry Digital</p>
-					</div>
-				</div>
-			</div>	
-		</a>
-	</article>
-    <article class="card col-xs-12 col-sm-6 col-md-4 col-lg-3   ">
-		<a href="#">
-			<div class="card__inner">
-				<div class="card__image">
-					<img src="<?php echo get_template_directory_uri(  ) ?>/dist/images/card.jpg" alt="Picture of team">
-				</div>
-				<div class="card__body">
-					<div class="card__body-header">
-						<p class="tag">meet the memebr</p>
-						<h4>Meet: Andrea Musso</h4>
-						<p class="text-large">Web developer at Foundry Digital</p>
-					</div>
-				</div>
-			</div>	
-		</a>
-	</article>
-    <article class="card col-xs-12 col-sm-6 col-md-4 col-lg-3   ">
-		<a href="#">
-			<div class="card__inner">
-				<div class="card__image">
-					<img src="<?php echo get_template_directory_uri(  ) ?>/dist/images/card.jpg" alt="Picture of team">
-				</div>
-				<div class="card__body">
-					<div class="card__body-header">
-						<p class="tag">meet the memebr</p>
-						<h4>Meet: Andrea Musso</h4>
-						<p class="text-large">Web developer at Foundry Digital</p>
-					</div>
-				</div>
-			</div>	
-		</a>
-	</article>
-    <article class="card col-xs-12 col-sm-6 col-md-4 col-lg-3  col-lg-3 ">
-		<a href="#">
-			<div class="card__inner">
-				<div class="card__image">
-					<img src="<?php echo get_template_directory_uri(  ) ?>/dist/images/card.jpg" alt="Picture of team">
-				</div>
-				<div class="card__body">
-					<div class="card__body-header">
-						<p class="tag">meet the memebr</p>
-						<h4>Meet: Andrea Musso</h4>
-						<p class="text-large">Web developer at Foundry Digital</p>
-					</div>
-				</div>
-			</div>	
-		</a>
-	</article>
-    <article class="card col-xs-12 col-sm-6 col-md-4 col-lg-3   ">
-		<a href="#">
-			<div class="card__inner">
-				<div class="card__image">
-					<img src="<?php echo get_template_directory_uri(  ) ?>/dist/images/card.jpg" alt="Picture of team">
-				</div>
-				<div class="card__body">
-					<div class="card__body-header">
-						<p class="tag">meet the memebr</p>
-						<h4>Meet: Andrea Musso</h4>
-						<p class="text-large">Web developer at Foundry Digital</p>
-					</div>
-				</div>
-			</div>	
-		</a>
-	</article>
+
+	<?php
+
+	$post_list = get_posts( array(
+  		'post_type'   => 'leadership_team',
+        'posts_per_page' => -1,
+	) );
+
+	// check if the repeater field has rows of data
+	if( $post_list ):
+
+	 	// loop through the rows of data
+	    foreach ( $post_list as $post ) {  setup_postdata( $post );
+	    	
+			get_template_part( 'template-parts/content', 'meet-member' ); 
+	    }
+
+	endif;
+
+	?>
 </div>
 
 

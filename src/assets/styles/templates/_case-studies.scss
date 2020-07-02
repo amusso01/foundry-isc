@@ -1,0 +1,47 @@
+.case-main {
+  background-color: $color__grey;
+  padding: 50px 0px 70px;
+  .case__body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px 25px;
+    color: $color__bright;
+    background-color: rgba(#0b132b, 0.8);
+    @media #{$breakpoint-md-up} {
+      width: 60%;
+      height: 90%;
+    }
+    p,
+    h2 {
+      color: $color__bright;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 25px;
+      @media #{$breakpoint-md-up} {
+        font-size: 25px;
+      }
+    }
+    &-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      > a {
+        margin-bottom: 20px;
+      }
+      .tag {
+        margin-bottom: 30px;
+      }
+      .btn__wrapper {
+        margin-top: auto;
+      }
+    }
+  }
+  .case__image {
+    min-height: 420px;
+    background-size: cover;
+    position: relative;
+  }
+}

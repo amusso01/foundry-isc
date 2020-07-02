@@ -1,0 +1,118 @@
+#swiperBanner {
+  .swiper-slide {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 500px;
+    @media #{$breakpoint-md-up} {
+      font-size: 35px;
+      line-height: 40px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .hero-carousel__content {
+    background-color: $color__bg;
+    padding: 0px 65px;
+    display: none;
+    @media #{$breakpoint-md-up} {
+      display: block;
+    }
+    &-inner {
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      h2 {
+        font-size: 28px;
+        line-height: 30px;
+        margin-top: 40px;
+        color: $color__bright;
+        @media #{$breakpoint-md-up} {
+          font-size: 35px;
+          line-height: 40px;
+        }
+      }
+      .tag__wrapper {
+        display: flex;
+        .tag {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+  .hero-carousel__image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: rgba(#0b132b, 0.3);
+      display: none;
+      @media #{$breakpoint-md-up} {
+        display: block;
+      }
+    }
+  }
+  .swiper-pagination-progressbar {
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    z-index: 10;
+    .swiper-pagination-progressbar-fill {
+      position: absolute;
+      background-color: $color__main;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      transform-origin: left top;
+    }
+  }
+  .arrow-container {
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+    z-index: 100;
+    .slider {
+      svg {
+        path {
+          fill: $color__bright;
+        }
+      }
+    }
+  }
+  .carousel-mobile {
+    display: block;
+    height: 100%;
+    @media #{$breakpoint-md-up} {
+      display: none;
+    }
+    .hero-carousel__content-inner-mobile {
+      height: 100%;
+      background: rgba(#0b132b, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 60px 35px;
+      h2 {
+        font-size: 32px;
+        line-height: 37px;
+        margin-top: 40px;
+        color: $color__bright;
+      }
+      .tag__wrapper {
+        display: flex;
+        .tag {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}

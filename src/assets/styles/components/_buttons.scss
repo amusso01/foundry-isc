@@ -1,7 +1,5 @@
-.btn__wrapper {
-  height: 100%;
-}
-.btn {
+.btn,
+.alm-load-more-btn {
   min-width: $button__width;
   min-height: $button__height;
   background-color: $color__link-hover;
@@ -12,6 +10,7 @@
   text-transform: uppercase;
   line-height: 0px;
   transition: 0.3s ease;
+  opacity: 1 !important;
   &:hover {
     color: $color__text;
     background-color: #f2bb17;
@@ -45,5 +44,23 @@
     color: $color__text;
     background-color: #f2bb17;
     cursor: pointer;
+  }
+}
+
+// ajax-button
+.video-category-main {
+  .alm-placeholder {
+    opacity: 0;
+    display: none;
+  }
+  .alm-btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .alm-load-more-btn {
+    border: none;
+    background-color: #f2bb17 !important;
+    text-indent: 0px !important;
   }
 }

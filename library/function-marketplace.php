@@ -26,19 +26,25 @@ if( $_POST['filter'] == 'no'){
 
 	if($_POST['type'] != ''){
 		$pila[] = array(
-							'key'	 	=> 'type',
-							'value'	  	=> $_POST['type'],
-							'compare' 	=> 'IN',
+							'taxonomy' => 'marketplace_categorie',
+			                'field' => 'term_id',
+			                'terms' => $_POST['type'],
+
 						);
 	}
 	if($_POST['location'] != ''){
 		$pila[] = array(
-							'key'	 	=> 'location',
-							'value'	  	=> $_POST['location'],
-							'compare' 	=> 'IN',
+							'taxonomy' 	=> 'marketplace_location',
+			                'field' => 'term_id',
+							'terms'	  	=> $_POST['location'],
 						);
 	}
 	if($_POST['tag'] != ''){
+		$pila[] = array(
+							'taxonomy' 	=> 'marketplace_tags',
+			                'field' => 'term_id',
+							'terms'	  	=> $_POST['tag'],
+						);
 		
 	}
 
@@ -47,7 +53,7 @@ if( $_POST['filter'] == 'no'){
 	$args = array( 'post_type' => 'marketplaces',
 			        'posts_per_page' => 60,
 			        'paged'          => $paged,
-					'meta_query'	=> array( $pila ), 
+					'tax_query'	=> array( $pila ), 
 				) ;
 
 		

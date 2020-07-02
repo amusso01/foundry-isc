@@ -34,9 +34,13 @@
 @import "components/videos";
 @import "components/carousel";
 @import "components/carousel-full";
+@import "components/carousel-banner";
 @import "components/landing-events-card";
 @import "components/search";
 @import "components/bottom-banner";
+@import "components/col-fix";
+@import "components/block-quote";
+@import "components/poll";
 
 // Templates
 @import "templates/single-column";
@@ -49,3 +53,6 @@
 @import "templates/consultancy";
 @import "templates/women";
 @import "templates/events";
+@import "templates/case-studies";
+@import "templates/insight-cat";
+@import "templates/insight";

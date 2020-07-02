@@ -1,0 +1,21 @@
+.block-quote {
+  &__linea {
+    height: 5px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  &__body {
+    display: flex;
+    &-svg {
+      margin-right: 30px;
+      padding-left: 30px;
+    }
+    &-quote {
+      > p {
+        font-weight: 700;
+        font-size: 16px;
+        padding-right: 30px;
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
  * @package foundry
  **/
 ?>
-<h4>Feathured</h4>
+<h4>Filter</h4>
 			<div class="white-line-box"></div>
 
 			<form id="filter" method="post" >

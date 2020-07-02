@@ -6,6 +6,8 @@ import countdown from "./../part/countdown";
 import bottomBanner from "./../part/bottomBanner";
 import carousel from "./../part/carousel";
 import carouselFull from "./../part/carouselFull";
+import carouselPost from "./../part/carouselPost";
+import carouselBanner from "./../part/carouselBanner";
 import sharing from "./../part/share";
 
 export default {
@@ -35,15 +37,26 @@ export default {
     }); // lazy loads elements with default selector as '.lozad'
     lazyObserver.observe();
 
-    // Swiper
+    // SWIPER
+    // testimonial
     const slider = document.getElementById("slider");
     if (typeof slider != "undefined" && slider != null) {
       carousel();
     }
-
+    // event carousel
     const fullCarousel = document.getElementById("swiperFull");
     if (typeof fullCarousel != "undefined" && fullCarousel != null) {
       carouselFull();
+    }
+    // post carousel
+    const postCarousel = document.getElementById("swiperPost");
+    if (typeof postCarousel != "undefined" && postCarousel != null) {
+      carouselPost();
+    }
+    // Banner carousel
+    const bannerCarousel = document.getElementById("swiperBanner");
+    if (typeof bannerCarousel != "undefined" && bannerCarousel != null) {
+      carouselBanner();
     }
 
     // Share

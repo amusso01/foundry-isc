@@ -9,8 +9,20 @@
  */
 
 get_header();
-$postCat = get_field( 'type' );
-$location = get_field( 'location' );
+	$terms = get_the_terms( get_the_ID(), 'marketplace_categorie' );
+	if( $terms ): 
+		foreach( $terms as $term ):
+					$postCat= $term;
+		endforeach;
+	endif;
+
+	$terms = get_the_terms( get_the_ID(), 'marketplace_location' );
+	if( $terms ): 
+		foreach( $terms as $term ):
+					$location = $term;
+		endforeach;
+	endif;
+
 ?>
 
 <?php get_template_part( 'components/page/hero-marketplace' ) ?>
@@ -40,7 +52,7 @@ $location = get_field( 'location' );
 			<?php if( get_field('apply_link') ){ ?>
 		    	<a href="<?php echo get_field('apply_link'); ?>" class="btn" target="_blanck">Apply</a> 
 			<?php } ?>
-		    <a href="#" class="btn btn__transparent alignright ">back to <?php echo $postCat->name; ?> listings</a>
+		    <a href="<?php echo esc_url( get_term_link( $postCat ) ) ; ?>" class="btn btn__transparent alignright ">back to <?php echo $postCat->name; ?> listings</a>
 
 		</div>
 
@@ -62,10 +74,10 @@ $location = get_field( 'location' );
 					<p class="tags-list"><strong>Tags</strong><br>
 
 						<?php 
-						$terms = get_field('tags_marketplace');
+						$terms = get_the_terms( get_the_ID(), 'marketplace_tags' );
 						if( $terms ): 
 						 foreach( $terms as $term ): ?>
-						        <a href="<?php echo esc_url( get_term_link( $term ) ); ?>"><?php echo esc_html( $term->name ); ?></a>
+						        <span><?php echo esc_html( $term->name ); ?></span>
 						    <?php endforeach;
 						endif; ?>
 
@@ -78,6 +90,11 @@ $location = get_field( 'location' );
 		
 	</div>
 
+
+	
+		
+	<?php get_template_part( 'components/carousel/post-carousel' ) ?>
+	
 
 </main>
 
