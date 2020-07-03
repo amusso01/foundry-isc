@@ -79,7 +79,11 @@ ul {
   width: 100%;
   height: 39.37vw;
 }
-
+p > strong {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
 /*
  * Headings
  */

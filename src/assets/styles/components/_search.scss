@@ -5,22 +5,47 @@
   position: absolute;
   width: 100%;
   left: 0px;
-  bottom: -50px;
-  height: 50px;
+  bottom: 0px;
+  height: 100%;
   display: flex;
   justify-content: center;
   pointer-events: none;
   opacity: 0;
+  z-index: 1000000;
 }
 .search-form-input {
   min-height: 50px;
-  padding: 10px;
-  background-color: $color__bright;
+  width: 100%;
+  padding-left: 30px;
+  position: relative;
+}
+.search__close {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 150px;
+  transform: translateY(-50%);
+  &:hover {
+    cursor: pointer;
+  }
+  > svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 .search-form-button {
   position: relative;
   border: none;
   border-radius: 0px;
-  padding: 0px;
+  padding: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
   min-height: 50px;
+  height: 100%;
+  background-color: rgba(#ffbf00, 1);
+  &:hover {
+    background-color: #ffbf00;
+    cursor: pointer;
+  }
 }

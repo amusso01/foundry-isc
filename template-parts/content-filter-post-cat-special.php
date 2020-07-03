@@ -73,7 +73,7 @@ $tax = $wp_query->get_queried_object();
 			
   ?>
 			
-			<article class="case col-xs-12 col-md-10 col-md-offset-1 ">
+			<article class="case col-xs-12 col-md-12 ">
 				<a href="<?php echo get_the_permalink() ?>">
 					<div class="case__inner">
 						<div class="case__image" style="background-image:url(<?php echo $image; ?>);">

@@ -7,6 +7,9 @@
  * @package foundry
  */
 
+ $term = get_the_category( $post->ID );
+
+ 
 ?>
 
  <article class="card col-xs-12 col-sm-6 col-md-4 col-lg-3   ">
@@ -17,7 +20,7 @@
 			</div>
 			<div class="card__body">
 				<div class="card__body-header">
-					<p class="tag"><?php echo $tax ?></p>
+					<p class="tag"><?php echo $term[0]->name ?></p>
 					<h4><?php echo get_the_title($post->ID); ?></h4>
 				</div>
 			</div>

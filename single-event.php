@@ -75,7 +75,7 @@ $eventCta = get_field('event_cta');
 		<div class="col-xs-1"></div>
 		<div class="col-xs-11 col-sm-10 col-md-10 box-guest">
 
-			<div class="row center-xs between-sm around-md between-lg">
+			<div class="row center-xs between-sm around-md">
 			
 		
 				<?php

@@ -9,6 +9,7 @@ import carouselFull from "./../part/carouselFull";
 import carouselPost from "./../part/carouselPost";
 import carouselBanner from "./../part/carouselBanner";
 import sharing from "./../part/share";
+import search from "./../part/search";
 
 export default {
   init() {
@@ -22,6 +23,9 @@ export default {
 
     // Dropdown menu
     navDropdown();
+
+    // Search
+    search();
 
     // Countdown
     countdown();

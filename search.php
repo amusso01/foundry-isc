@@ -10,17 +10,17 @@
 get_header();
 ?>
 
-<main class="main site-search" role="main" >
+<main class="main site-search row content-block" style="padding-top:50px; background-color:#EEF2F4" role="main" >
 
 	<?php if ( have_posts() ) : ?>
 
-		<header class="page-header">
-			<h1 class="page-title">
+		<header class="page-header col-xs-12">
+			<h2 class="page-title">
 			<?php
 			/* translators: %s: search query. */
 			printf( esc_html__( 'Search Results for: %s', 'foundry' ), '<span>' . get_search_query() . '</span>' );
 			?>
-			</h1>
+			</h2>
 		</header><!-- .page-header -->
 
 		<?php
@@ -33,7 +33,7 @@ get_header();
 			 * If you want to overload this in a child theme then include a file
 			 * called content-search.php and that will be used instead.
 			 */
-			get_template_part( 'template-parts/content', 'search' );
+			get_template_part( 'template-parts/content', 'insight-cat' ); 
 
 		endwhile;
 
