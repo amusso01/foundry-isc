@@ -128,12 +128,12 @@
         @media #{$breakpoint-md-up} {
           margin-right: 8px;
         }
-        > a {
-          pointer-events: none;
-          @media #{$breakpoint-md-up} {
-            pointer-events: all;
-          }
-        }
+        // > a {
+        //   pointer-events: none;
+        //   @media #{$breakpoint-md-up} {
+        //     pointer-events: all;
+        //   }
+        // }
         &:after {
           content: "";
           position: absolute;
@@ -225,18 +225,23 @@
     > ul {
       list-style: none;
       display: flex;
-      align-items: center;
+
+      flex-direction: column;
+      @media #{$breakpoint-sm-up} {
+        flex-direction: row;
+        align-items: center;
+      }
     }
     &__item {
-      margin-left: 10px;
       font-size: 12px;
+      margin-bottom: 10px;
+      @media #{$breakpoint-sm-up} {
+        margin-left: 10px;
+        margin-bottom: 0px;
+      }
       &:first-of-type {
         margin-left: 0px;
         margin-right: 20px;
-        display: none;
-        @media #{$breakpoint-md-up} {
-          display: inherit;
-        }
         > a {
           color: $color__main;
           font-size: 13px;

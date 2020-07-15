@@ -106,16 +106,24 @@ h6 {
 
 h1,
 .h1 {
-  font-size: $text__h1;
   font-weight: 700;
-  line-height: 50px;
+  font-size: 38px;
+  line-height: 40px;
+  @media #{$breakpoint-sm-up} {
+    line-height: 50px;
+    font-size: $text__h1;
+  }
 }
 
 h2,
 .h2 {
-  font-size: $text__h2;
   font-weight: 900;
-  line-height: 40px;
+  font-size: 28px;
+  line-height: 32px;
+  @media #{$breakpoint-sm-up} {
+    font-size: $text__h2;
+    line-height: 40px;
+  }
 }
 
 h3,

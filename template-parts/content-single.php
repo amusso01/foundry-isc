@@ -43,10 +43,29 @@
 				<div class="col-xs-1">
 					<?php get_template_part( 'components/page/share' ) ?>
 				</div>
-				<div class="col-xs-11 col-sm-6 col-md-6">
+				<div class="col-xs-10 col-sm-6 col-md-6">
 
 					
-					<?php  the_content( ); ?>
+					<?php  if( is_user_logged_in() ){
+						the_content( );
+					}else{ 
+						the_excerpt() 
+
+						?>
+
+						<div class="box-create-account"> 
+
+							<span>To continue reading this article….</span>
+
+							<h2>Create a free account to access<br> this article and many more</h2>
+
+							<a href="<?php echo get_the_permalink(111428); ?>" class="btn-yellow">create an account</a>
+
+							<p>Already a member? <a href="<?php echo get_the_permalink( 111420); ?> ">Sign in</a></p>
+
+						</div>
+
+					<?php } ?>
 
 					<div class="tags-box">
 						<p class="tags-list"><?php echo $listTags; ?></p>
@@ -57,9 +76,8 @@
 
 				</div>
 
-				<div class="col-xs-11 col-xs-offset-1 col-sm-4 col-md-4 ">
+				<div class="col-xs-11 col-sm-offset-1 col-sm-4 col-md-4 ">
 					<?php  if ( is_active_sidebar( 'ads-portrait' ) ) :  dynamic_sidebar( 'ads-portrait' );  endif; ?>
-					<?php echo do_shortcode( '[totalpoll id="111224"]' )  ?>
 				</div>
 
 
