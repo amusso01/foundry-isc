@@ -5,7 +5,9 @@ gsap.registerPlugin(CSSRulePlugin);
 
 export default function navDropdown() {
   const menuLi = document.querySelector(".menu-item-has-children");
-  const menuLiChildren = document.querySelector(".menu-item-has-children > a");
+  const menuLiChildren = document.querySelectorAll(
+    ".menu-item-has-children > a"
+  );
   const subMenu = menuLi.querySelector(".sub-menu");
   const body = document.querySelector("body");
   const loginMenu = document.querySelector(".site-header__login");
@@ -22,16 +24,20 @@ export default function navDropdown() {
   let mql = window.matchMedia("(max-width: 1040px)");
 
   if (mql.matches) {
-    menuLiChildren.addEventListener("click", e => {
-      e.preventDefault();
-      menuLi.classList.toggle("open");
-      loginMenu.classList.toggle("hide");
+    menuLiChildren.forEach(element => {
+      element.addEventListener("click", e => {
+        e.preventDefault();
+        element.parentElement.classList.toggle("open");
+        loginMenu.classList.toggle("hide");
+      });
     });
   } else {
-    menuLiChildren.addEventListener("click", e => {
-      e.preventDefault();
-      menuLi.classList.toggle("active");
-      toggleTween(tl);
+    menuLiChildren.forEach(element => {
+      element.addEventListener("click", e => {
+        e.preventDefault();
+        element.parentElement.classList.toggle("active");
+        toggleTween(tl);
+      });
     });
     body.addEventListener("mouseup", e => {
       if (
