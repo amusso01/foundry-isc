@@ -1,0 +1,20 @@
+#slider-home {
+  position: relative;
+  margin: 90px 0px;
+  .home-pagination {
+    margin-top: 20px;
+  }
+  .arrow-container {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px 50px;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: none;
+    @media #{$breakpoint-md-up} {
+      display: flex;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import navDropdown from "./../part/navDropdown";
 import countdown from "./../part/countdown";
 import bottomBanner from "./../part/bottomBanner";
 import carousel from "./../part/carousel";
+import carouselHome from "./../part/carouselHome";
 import carouselFull from "./../part/carouselFull";
 import carouselPost from "./../part/carouselPost";
 import carouselBanner from "./../part/carouselBanner";
@@ -46,6 +47,11 @@ export default {
     const slider = document.getElementById("slider");
     if (typeof slider != "undefined" && slider != null) {
       carousel();
+    }
+    // home
+    const sliderHome = document.getElementById("slider-home");
+    if (typeof sliderHome != "undefined" && sliderHome != null) {
+      carouselHome();
     }
     // event carousel
     const fullCarousel = document.getElementById("swiperFull");

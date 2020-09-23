@@ -20,7 +20,7 @@ $testimonials = get_field('testimonials');
         <!-- Slides -->
         <?php foreach($testimonials as $key => $value) : ?>
 
-            
+           
         <div class="swiper-slide testimonial-slide">
             <div class="testimonial-slide__image">
                 <img src="<?php echo $value['testimonial_image'] ?>" alt="slide image">

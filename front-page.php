@@ -10,27 +10,30 @@
 get_header();
 ?>
 
-<section class="site-hero">
-	
-	<?php get_template_part( 'components/front/hero' ); ?>
 
-</section>
 
 <main class="main homepage-main" role="main">
 
-	<?php if ( have_posts() ) : ?>
+	<?php
+	if( !is_user_logged_in() ){ 
+		if ( have_posts() ) : 
+			while ( have_posts() ) : the_post(); 
+				get_template_part('components/front/carousel');
+				get_template_part( 'components/front/dark_section' );
 
-		<?php while ( have_posts() ) : the_post(); // @codingStandardsIgnoreLine ?>
+			endwhile;
+		else :
+			get_template_part( 'template-parts/content', 'none' );
+		endif;
+	}else{ ?>
 
-			<?php get_template_part( 'template-parts/content', 'front' ) ?>
-
-		<?php endwhile; ?>
-
-	<?php else :?>
-
-		<?php get_template_part( 'template-parts/content', 'none' );?>
-
-	<?php endif; ?>
+		<div class="row status-community">
+		<div class="col-md-3"><?php get_template_part( 'template-parts/content', 'user-sidebar' ); ?></div>
+			<div class="col-md-9" style="background-color: #EEF2F4;">
+				<?php  get_template_part( 'template-parts/content', 'user-info-home' );  ?>
+			</div>
+		</div> 
+	<?php } ?>
 
 </main>
 
